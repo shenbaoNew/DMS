@@ -213,7 +213,7 @@ namespace DMS.Forms {
         private void SelectDapVersion(string from) {
             frmSelectDapVersion selectVersion = new frmSelectDapVersion(from);
             selectVersion.ShowDialog();
-            if (selectVersion.DialogResult == DialogResult.OK && selectVersion.SelectPatch != null) {
+            if (selectVersion.DialogResult == DialogResult.OK && !string.IsNullOrEmpty(selectVersion.SelectPatch)) {
                 this.cmbVersion.Text = selectVersion.SelectPatch;
             }
         }

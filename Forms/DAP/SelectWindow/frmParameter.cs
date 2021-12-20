@@ -24,6 +24,11 @@ namespace DMS.Forms.DAP.SelectWindow {
         }
 
         private void btnSet_Click(object sender, EventArgs e) {
+            if (string.IsNullOrEmpty(this.projectPath)) {
+                MessageBox.Show("请输入DAP项目路径");
+                return;
+            }
+
             InitTool init = new InitTool();
             this.BuildParameter();
             init.SaveRunnintParameter(parameters, projectPath);
