@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DMS>
+  <E10Items>
+    <Item time="2016/11/8 9:32:32"> H:\DailyWork\E10\ZH50-20161107171031</Item>
+    <Item time="2016/11/15 10:08:05"> H:\DailyWork\E10\E10FIL-11150946</Item>
+    <Item time="2016/11/24 10:08:25"> H:\DailyWork\E10\ZH50-20161123170706</Item>
+    <Item time="2016/11/25 10:00:19"> H:\DailyWork\E10\ZH50-20161011073615</Item>
+    <Item time="2016/11/28 17:41:13"> H:\DailyWork\E10\ZH50-20161128170930</Item>
+    <Item time="2016/11/30 11:17:59"> H:\DailyWork\E10\E202-20161129170624</Item>
+    <Item time="2016/12/7 15:15:05"> H:\DailyWork\E10\E30-20161206171146</Item>
+    <Item time="2016/12/8 15:14:37"> H:\DailyWork\E10\E10FIL-完整环境</Item>
+    <Item time="2016/12/12 16:42:18"> H:\DailyWork\E10\ZH50-20161209171135</Item>
+    <Item time="2016/12/22 16:34:48"> H:\DailyWork\E10\ZH50-20161220170619</Item>
+    <Item time="2016/12/23 17:13:13"> H:\DailyWork\E10\E202-20161222170834</Item>
+    <Item time="2016/12/25 18:40:39"> H:\DailyWork\E10\ZH50-20161123170706_PT</Item>
+    <Item time="2016/12/27 14:10:01"> H:\DailyWork\E10\ZH50-20161226170815</Item>
+    <Item time="2016/12/30 10:16:15"> H:\DailyWork\E10\E202-20161229170642</Item>
+    <Item time="2017/1/4 14:44:01"> H:\DailyWork\E10\UP50-20170104094751</Item>
+    <Item time="2017/1/10 17:08:42"> H:\DailyWork\E10\UP5001-20170110114753</Item>
+    <Item time="2017/1/13 21:33:55"> H:\DailyWork\E10\UP5001-20170113165042</Item>
+    <Item time="2017/1/16 11:10:38"> H:\DailyWork\E10\E202-20170113171152</Item>
+  </E10Items>
+  <OOQLItems>
+    <Item time="2015/8/30 16:57:25"> D:\Program Files\DigiWin\OOQLDesigner</Item>
+    <Item time="2016/9/21 9:23:22"> H:\E10开发工具\OOQLDesigner</Item>
+  </OOQLItems>
+  <CMItems>
+  </CMItems>
+  <E10SrcItems>
+    <Item time="2016/10/11 10:29:05"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.WIP_TRANSFER_DOC</Item>
+    <Item time="2016/10/11 14:54:39"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.GenerateInternalPurOrderService</Item>
+    <Item time="2016/10/11 15:43:23"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.GenerateMOService</Item>
+    <Item time="2016/10/12 19:43:51"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.MO</Item>
+    <Item time="2016/10/14 9:11:43"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.MOSUPPLIER_DISPATCHED</Item>
+    <Item time="2016/10/14 9:52:34"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.CommonSupplyChain</Item>
+    <Item time="2016/10/14 15:09:46"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.MO_B005</Item>
+    <Item time="2016/10/14 16:08:54"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.MO_B002</Item>
+    <Item time="2016/10/14 17:37:04"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.INNER_ORDER_DOC</Item>
+    <Item time="2016/10/14 19:25:29"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.ISSUE_RECEIPT</Item>
+    <Item time="2016/10/18 13:29:59"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.ROUTING_DISPATCHED</Item>
+    <Item time="2016/10/18 14:14:19"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.ITEM_ROUTING</Item>
+    <Item time="2016/10/18 15:07:35"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.PurchasePriceService</Item>
+    <Item time="2016/10/18 17:04:08"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.MO_ROUTING_DISPATCH</Item>
+    <Item time="2016/10/20 9:09:18"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.AddPrintDockableInterceptor</Item>
+    <Item time="2016/10/20 13:57:52"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.BOM</Item>
+    <Item time="2016/10/20 16:20:35"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.GenerateTferReqService</Item>
+    <Item time="2016/10/21 12:57:26"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.TRANSFER_IN_DOC</Item>
+    <Item time="2016/10/21 12:57:42"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.TRANSFER_DOC</Item>
+    <Item time="2016/10/21 14:32:35"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.BomTreePanel</Item>
+    <Item time="2016/11/17 10:39:13"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.FIL_INTEGRATE-201611170952-ZH</Item>
+    <Item time="2016/11/18 9:25:27"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.FIL_INTEGRATE</Item>
+    <Item time="2016/11/18 14:51:28"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.BOM_AUTO_CONFIG</Item>
+    <Item time="2016/11/22 9:40:06"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.WIP_TRANSFER_DOC</Item>
+    <Item time="2016/11/22 14:06:01"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.SALES_ISSUE</Item>
+    <Item time="2016/11/22 14:25:55"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.BM_B032</Item>
+    <Item time="2016/11/22 15:44:41"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.EFNET</Item>
+    <Item time="2016/11/22 16:53:43"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.ISSUE_RECEIPT</Item>
+    <Item time="2016/11/23 10:29:22"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.SALES_ISSUE</Item>
+    <Item time="2016/11/23 16:45:01"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.MO_CHANGE</Item>
+    <Item time="2016/11/24 16:44:34"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.MoUpdateMoRoutingDService</Item>
+    <Item time="2016/11/25 9:41:14"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.ExtractMoDetailsService</Item>
+    <Item time="2016/11/25 13:22:12"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.BM_B029</Item>
+    <Item time="2016/11/25 13:22:27"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.BM_B029</Item>
+    <Item time="2016/11/25 15:49:07"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.PO_B029</Item>
+    <Item time="2016/11/25 15:49:14"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.PO_B029</Item>
+    <Item time="2016/11/29 13:13:40"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.FIL_INTEGRATE</Item>
+    <Item time="2016/11/29 13:54:04"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.FIL_INTEGRATE-201611291352</Item>
+    <Item time="2016/11/29 13:54:14"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.FIL_INTEGRATE-201611291352</Item>
+    <Item time="2016/11/30 13:45:40"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.BOM_RULE</Item>
+    <Item time="2016/11/30 14:01:20"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.BOM_RULE</Item>
+    <Item time="2016/12/1 10:05:42"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.MO</Item>
+    <Item time="2016/12/1 15:12:17"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.BOM</Item>
+    <Item time="2016/12/1 16:23:01"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.FIL_INTEGRATE-201612011615</Item>
+    <Item time="2016/12/1 16:23:10"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.FIL_INTEGRATE-201612011615</Item>
+    <Item time="2016/12/2 11:24:10"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.SF_B007</Item>
+    <Item time="2016/12/2 16:40:19"> C:\DF_E10_3.0\WD_PR\SRC\SF_B007</Item>
+    <Item time="2016/12/2 16:44:09"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.SF_B007</Item>
+    <Item time="2016/12/2 16:48:15"> C:\DF_E10_2.0.2\WD_PR\SRC\Digiwin.ERP.SF_B007</Item>
+    <Item time="2016/12/2 17:00:43"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.CMS_B003</Item>
+    <Item time="2016/12/4 14:47:45"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.SF_DATA_COLLECT</Item>
+    <Item time="2016/12/4 16:22:57"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.SF_DATA_COLLECT</Item>
+    <Item time="2016/12/4 20:16:20"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.PURCHASE_RECEIPT</Item>
+    <Item time="2016/12/5 13:56:28"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.ITEM_CERTIFICATION</Item>
+    <Item time="2016/12/5 14:44:03"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.ITEM_SORT_VARIABLE</Item>
+    <Item time="2016/12/5 14:51:43"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.ITEM_SORT_VARIABLE</Item>
+    <Item time="2016/12/5 17:45:27"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.ITEM_ROUTING</Item>
+    <Item time="2016/12/5 18:06:13"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.RedundancyRoutingService</Item>
+    <Item time="2016/12/7 9:47:47"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.ECR</Item>
+    <Item time="2016/12/7 9:56:42"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.ECR</Item>
+    <Item time="2016/12/7 10:03:16"> C:\DF_E10_2.0.2\WD_PR\SRC\Digiwin.ERP.ECR</Item>
+    <Item time="2016/12/7 17:44:32"> C:\DF_E10_2.0.2\WD_PR\SRC\Digiwin.ERP.ITEM_ROUTING</Item>
+    <Item time="2016/12/8 9:40:34"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.QtyPerEditableService</Item>
+    <Item time="2016/12/12 15:32:28"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.MO_RECEIPT</Item>
+    <Item time="2016/12/12 15:36:14"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.MO_RECEIPT</Item>
+    <Item time="2016/12/12 15:40:44"> C:\DF_E10_2.0.2\WD_PR\SRC\Digiwin.ERP.MO_RECEIPT</Item>
+    <Item time="2016/12/13 11:25:09"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.PARA_FIL</Item>
+    <Item time="2016/12/15 16:00:15"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.MO_B002</Item>
+    <Item time="2016/12/22 17:51:02"> C:\DF_E10_3.0\WD_PR\SRC\Digiwin.ERP.BM_B027</Item>
+    <Item time="2016/12/22 17:55:13"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.SALES_ORDER_DOC</Item>
+    <Item time="2016/12/22 17:56:18"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.BM_B027</Item>
+    <Item time="2017/1/9 10:06:34"> C:\DF_E10_5.0_B\WD_PR\SRC\Digiwin.ERP.WIP_TRANSFER_DOC</Item>
+    <Item time="2017/1/13 10:24:41"> C:\DF_E10_5.0_B\WD_PR\SRC\Digiwin.ERP.MO_ROUTING</Item>
+    <Item time="2017/1/13 11:04:53"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.MO_ROUTING</Item>
+    <Item time="2017/1/19 16:27:56"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.BOM_AUTO_CONFIG</Item>
+    <Item time="2017/1/19 17:20:01"> C:\DF_E10_5.0\WD_PR\SRC\Digiwin.ERP.BM_R003</Item>
+    <Item time="2017/1/19 17:52:43"> C:\DF_E10_2.0.2\WD_PR\SRC\Digiwin.ERP.BM_R003</Item>
+  </E10SrcItems>
+  <LicenseCenter>
+    <Item>
+      <BindToIP>172.16.1.120</BindToIP>
+      <BindToPort>8090</BindToPort>
+      <ControlCenterPort>8055</ControlCenterPort>
+    </Item>
+    <Item>
+      <BindToIP>172.16.1.35</BindToIP>
+      <BindToPort>8049</BindToPort>
+      <ControlCenterPort>8047</ControlCenterPort>
+    </Item>
+    <Item>
+      <BindToIP>172.16.1.243</BindToIP>
+      <BindToPort>8090</BindToPort>
+      <ControlCenterPort>8055</ControlCenterPort>
+    </Item>
+    <Item>
+      <BindToIP>172.16.1.39</BindToIP>
+      <BindToPort>8049</BindToPort>
+      <ControlCenterPort>8047</ControlCenterPort>
+    </Item>
+    <Item>
+      <BindToIP>172.16.1.26</BindToIP>
+      <BindToPort>8049</BindToPort>
+      <ControlCenterPort>8047</ControlCenterPort>
+    </Item>
+  </LicenseCenter>
+</DMS>

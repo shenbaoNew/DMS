@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DMS>
+  <Menus>
+    <Menu Code="010000" Parent="0" Order="1" FullName="" IsLeaf="0">工具</Menu>
+    <Menu Code="010100" Parent="010000" Order="1" FullName="DMS.Forms.frmEditConfigFile" IsLeaf="1">文件管理</Menu>
+    <Menu Code="010200" Parent="010000" Order="2" FullName="DMS.Forms.frmSQLManagement" IsLeaf="1">数据库管理</Menu>
+    <!--<Menu Code="010300" Parent="010000" Order="3" FullName="MyTools.Forms.frmParityCode" IsLeaf="1">条形码校验码</Menu>-->
+    <Menu Code="020000" Parent="0" Order="2" FullName="" IsLeaf="0">功能</Menu>
+    <Menu Code="020100" Parent="020000" Order="1" FullName="DMS.Forms.frmCheckData" IsLeaf="1">数据监控</Menu>
+    <Menu Code="020200" Parent="020000" Order="2" FullName="DMS.Forms.frmTest" IsLeaf="1">接口测试</Menu>
+    <!--<Menu Code="020300" Parent="020000" Order="3" FullName="MyTools.Forms.frmDataGrid" IsLeaf="1">GridView列显示</Menu>-->
+    <Menu Code="030000" Parent="0" Order="3" FullName="" IsLeaf="0">E10</Menu>
+    <Menu Code="030100" Parent="030000" Order="1" FullName="DMS.Forms.frmE10Main" IsLeaf="1">E10开发管理</Menu>
+    <Menu Code="030200" Parent="030000" Order="2" FullName="DMS.Forms.frmDECode" IsLeaf="1">E10账套解密</Menu>
+	<Menu Code="030300" Parent="030000" Order="2" FullName="DMS.Forms.frmE10SearchMain" IsLeaf="1">E10综合查询</Menu>
+    <Menu Code="040000" Parent="0" Order="4" FullName="" IsLeaf="0">系统管理</Menu>
+    <Menu Code="040100" Parent="040000" Order="1" FullName="DMS.Forms.frmSystemConfigs" IsLeaf="1">系统设置</Menu>
+    <Menu Code="040200" Parent="040000" Order="2" FullName="DMS.Forms.frmUserChangePassword" IsLeaf="1">修改密码</Menu>
+    <Menu Code="040900" Parent="040000" Order="9" FullName="" IsLeaf="1">-</Menu>
+    <Menu Code="041000" Parent="040000" Order="10" FullName="DMS.Forms.frmReLogin" IsLeaf="1">重新登录</Menu>
+    <Menu Code="180000" Parent="0" Order="18" FullName="" IsLeaf="0">帮助</Menu>
+	<Menu Code="181500" Parent="180000" Order="15" FullName="DMS.Forms.frmHelpMain" IsLeaf="1">帮助文档</Menu>
+    <Menu Code="181600" Parent="180000" Order="16" FullName="DMS.Forms.frmCheckUpdate" IsLeaf="1">检查更新</Menu>
+	<Menu Code="181700" Parent="180000" Order="17" FullName="" IsLeaf="1">-</Menu>
+    <Menu Code="181800" Parent="180000" Order="18" FullName="DMS.Forms.frmAboutForm" IsLeaf="1">关于DMS</Menu>
+  </Menus>
+  <SystemConfig>
+    <SystemFlag>T</SystemFlag>
+    <Version>1.0.0.61</Version>
+  </SystemConfig>
+  <Users>
+    <User>
+      <Code>admin</Code>
+      <Name>admin</Name>
+      <IsAdmin>1</IsAdmin>
+      <Psd>2;4</Psd>
+      <UIStyleID>-1</UIStyleID>
+      <UIStyleColor>0,0,0,0</UIStyleColor>
+      <FormModule>2</FormModule>
+      <ShortCut>
+        <Style>1</Style>
+        <Items>
+          <Item>DMS.Forms.frmE10Main</Item>
+          <Item>DMS.Forms.frmDECode</Item>
+        </Items>
+      </ShortCut>
+    </User>
+  </Users>
+  <DataBase>
+    <LocalDBConnectBak>
+      <Server>192.168.1.102</Server>
+      <DataBase>MMSTEST</DataBase>
+      <User>sa</User>
+      <Psd>uihrjet</Psd>
+    </LocalDBConnectBak>
+    <LocalDBConnect>
+      <Server>127.0.0.1</Server>
+      <DataBase>E10_3.0_ZH_1_07_13</DataBase>
+      <User>sa</User>
+      <Psd>uihrjet</Psd>
+    </LocalDBConnect>
+  </DataBase>
+</DMS>

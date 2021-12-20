@@ -1,0 +1,875 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E7DD64EA-2D15-4F22-93E1-B98B34974509}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DMS</RootNamespace>
+    <AssemblyName>DMS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>http://127.0.0.1/DMS/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://127.0.0.1/DMS/</InstallUrl>
+    <ProductName>辅助开发管理系统</ProductName>
+    <PublisherName>鼎捷谌豹</PublisherName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>DMS.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>97</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Release\DMS\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Release\DMS\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logonew.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C95F46A38FB2F62D89C9829DB89E92B2F86C40E8</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MyTools_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ChineseConverter">
+      <HintPath>Reference\ChineseConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar, Version=8.9.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference\DevComponents.DotNetBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Digiwin.Designer.Sql">
+      <HintPath>Reference\Digiwin.Designer.Sql.dll</HintPath>
+    </Reference>
+    <Reference Include="Digiwin.Designer.Translator">
+      <HintPath>Reference\Digiwin.Designer.Translator.dll</HintPath>
+    </Reference>
+    <Reference Include="Digiwin.Mars.Common">
+      <HintPath>Reference\Digiwin.Mars.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Digiwin.Mars.Torridity">
+      <HintPath>Reference\Digiwin.Mars.Torridity.dll</HintPath>
+    </Reference>
+    <Reference Include="Digwin.Designer.TSqlScript">
+      <HintPath>Reference\Digwin.Designer.TSqlScript.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.TextEditor, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference\ICSharpCode.TextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>Reference\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity">
+      <HintPath>Reference\MySql.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6">
+      <HintPath>Reference\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Fabric.Plugin">
+      <HintPath>Reference\MySql.Fabric.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web">
+      <HintPath>Reference\MySql.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>C:\DF_E10_6.0\WD_PR\SRC\bin\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>C:\DF_E10_6.0\WD_PR\SRC\bin\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>C:\DF_E10_6.0\WD_PR\SRC\bin\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>C:\DF_E10_6.0\WD_PR\SRC\bin\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="sapnco">
+      <HintPath>Reference\sapnco.dll</HintPath>
+    </Reference>
+    <Reference Include="sapnco_utils">
+      <HintPath>Reference\sapnco_utils.dll</HintPath>
+    </Reference>
+    <Reference Include="SevenZipSharp, Version=0.64.3890.29348, Culture=neutral, PublicKeyToken=20de82c62b055c88, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference\SevenZipSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YY.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference\YY.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="YY.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference\YY.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="YY.Methods">
+      <HintPath>Reference\YY.Methods.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\KillSumControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\KillSumControl.Designer.cs">
+      <DependentUpon>KillSumControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SystemControl\BaseSettingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SystemControl\CreateDBReIndexControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SystemControl\CreateDBReIndexControl.Designer.cs">
+      <DependentUpon>CreateDBReIndexControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SystemControl\QueryDesignerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SystemControl\QueryDesignerControl.Designer.cs">
+      <DependentUpon>QueryDesignerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SystemControl\QueryResultControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SystemControl\QueryResultControl.Designer.cs">
+      <DependentUpon>QueryResultControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SystemControl\RemoveHistoryDataControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SystemControl\RemoveHistoryDataControl.Designer.cs">
+      <DependentUpon>RemoveHistoryDataControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SystemControl\SqlCompressControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SystemControl\SqlCompressControl.Designer.cs">
+      <DependentUpon>SqlCompressControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SystemControl\StartUpConfigControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SystemControl\StartUpConfigControl.Designer.cs">
+      <DependentUpon>StartUpConfigControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SystemControl\VistaButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TopPanelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TopPanelControl.Designer.cs">
+      <DependentUpon>TopPanelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataClass\DataBase\LocalDataBase.cs" />
+    <Compile Include="DataClass\DataBase\RemoteDataBase.cs" />
+    <Compile Include="DataClass\DataBase\Sap\SapRfcBase.cs" />
+    <Compile Include="DataClass\DataBase\Sap\SapRfcHelper.cs" />
+    <Compile Include="DataClass\DataMonitor\DataMonitorData.cs" />
+    <Compile Include="DataClass\Digiwin\DataClass.cs" />
+    <Compile Include="DataClass\Digiwin\DigiwinHelper.cs" />
+    <Compile Include="DataClass\MMSData\MMSData.cs" />
+    <Compile Include="DataClass\PubData\PlantInfoData.cs" />
+    <Compile Include="DataClass\Pub\CommonHelper.cs" />
+    <Compile Include="DataClass\Pub\ConstHelper.cs" />
+    <Compile Include="DataClass\Pub\DataBinds.cs" />
+    <Compile Include="DataClass\Pub\FtpHelper.cs" />
+    <Compile Include="DataClass\Pub\Functions.cs" />
+    <Compile Include="DataClass\Pub\Menu.cs" />
+    <Compile Include="DataClass\Pub\PubEnum.cs" />
+    <Compile Include="DataClass\Pub\PubEventHandler.cs" />
+    <Compile Include="DataClass\Pub\PubContext.cs" />
+    <Compile Include="DataClass\DataBase\SQLHelper.cs" />
+    <Compile Include="DataClass\Pub\PubHelper.cs" />
+    <Compile Include="DataClass\Pub\PubHttp.cs" />
+    <Compile Include="DataClass\Pub\ShowMessage.cs" />
+    <Compile Include="DataClass\Pub\XmlHelper.cs" />
+    <Compile Include="DataClass\Security\Security.cs" />
+    <Compile Include="DataClass\Systems\ImageList.cs" />
+    <Compile Include="DataClass\Systems\SQLServer\PrograssManager.cs" />
+    <Compile Include="DataClass\Systems\SQLServer\SqlConnectionManager.cs" />
+    <Compile Include="DataClass\Systems\SQLServer\CreateHistoryData.cs" />
+    <Compile Include="DataClass\Systems\SQLServer\OleDbConnString.cs" />
+    <Compile Include="DataClass\Systems\SQLServer\OleDbSchema.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataClass\Systems\SQLServer\QueryBuilder.cs" />
+    <Compile Include="DataClass\Systems\SQLServer\QueryField.cs" />
+    <Compile Include="DataClass\Systems\SQLServer\SQLManageData.cs" />
+    <Compile Include="DataClass\Systems\SystemManager.cs" />
+    <Compile Include="DataClass\Systems\User\UserData.cs" />
+    <Compile Include="Forms\BaseForms\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseForms\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseForms\BaseQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseForms\BaseQueryForm.Designer.cs">
+      <DependentUpon>BaseQueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseForms\ProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseForms\ProgressForm.Designer.cs">
+      <DependentUpon>ProgressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseForms\ShowProgress.cs" />
+    <Compile Include="Forms\DAP\frmCrossKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DAP\frmCrossKey.Designer.cs">
+      <DependentUpon>frmCrossKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DAP\frmSendRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DAP\frmSendRequest.Designer.cs">
+      <DependentUpon>frmSendRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DAP\frmSetDBServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DAP\frmSetDBServer.Designer.cs">
+      <DependentUpon>frmSetDBServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DAP\frmSyncDapMetadata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DAP\frmSyncDapMetadata.Designer.cs">
+      <DependentUpon>frmSyncDapMetadata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DAP\InitIDE\DapParameter.cs" />
+    <Compile Include="Forms\DAP\InitIDE\frmInitIDE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DAP\InitIDE\frmInitIDE.Designer.cs">
+      <DependentUpon>frmInitIDE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DAP\InitIDE\InitParameter.cs" />
+    <Compile Include="Forms\DAP\InitIDE\InitTool.cs" />
+    <Compile Include="Forms\DAP\SelectWindow\frmParameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DAP\SelectWindow\frmParameter.Designer.cs">
+      <DependentUpon>frmParameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DAP\SelectWindow\frmSelectDapVersion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DAP\SelectWindow\frmSelectDapVersion.Designer.cs">
+      <DependentUpon>frmSelectDapVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataForms\frmCheckData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DataForms\frmCheckData.Designer.cs">
+      <DependentUpon>frmCheckData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataForms\Grid\frmDataGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DataForms\Grid\frmDataGrid.designer.cs">
+      <DependentUpon>frmDataGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataForms\Grid\frmDataGridViewColumns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DataForms\Grid\frmDataGridViewColumns.designer.cs">
+      <DependentUpon>frmDataGridViewColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Digiwin\EncodeAndDecode.cs" />
+    <Compile Include="Forms\Digiwin\ExtendedWebBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Digiwin\frmDECode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Digiwin\frmDECode.Designer.cs">
+      <DependentUpon>frmDECode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Digiwin\frmE10Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Digiwin\frmE10Main.Designer.cs">
+      <DependentUpon>frmE10Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Digiwin\frmE10SearchMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Digiwin\frmE10SearchMain.Designer.cs">
+      <DependentUpon>frmE10SearchMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Digiwin\frmHashCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Digiwin\frmHashCode.Designer.cs">
+      <DependentUpon>frmHashCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Digiwin\FrmSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Digiwin\FrmSetting.designer.cs">
+      <DependentUpon>FrmSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Digiwin\frmSQLFormat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Digiwin\frmSQLFormat.Designer.cs">
+      <DependentUpon>frmSQLFormat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Digiwin\SettingPara.cs" />
+    <Compile Include="Forms\DocumentForms\frmHelpBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DocumentForms\frmHelpBrowser.designer.cs">
+      <DependentUpon>frmHelpBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DocumentForms\frmHelpMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DocumentForms\frmHelpMain.designer.cs">
+      <DependentUpon>frmHelpMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DocumentForms\HelpManager.cs" />
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SplashClass.cs" />
+    <Compile Include="Forms\SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SplashForm.Designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SysForms\BaseSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SysForms\BaseSettingForm.Designer.cs">
+      <DependentUpon>BaseSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SysForms\frmAboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SysForms\frmAboutForm.Designer.cs">
+      <DependentUpon>frmAboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SysForms\frmCheckUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SysForms\frmCheckUpdate.Designer.cs">
+      <DependentUpon>frmCheckUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SysForms\frmEditConfigFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SysForms\frmEditConfigFile.Designer.cs">
+      <DependentUpon>frmEditConfigFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SysForms\frmParityCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SysForms\frmParityCode.Designer.cs">
+      <DependentUpon>frmParityCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SysForms\LoginForms\FilterEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SysForms\LoginForms\FilterEditorForm.Designer.cs">
+      <DependentUpon>FilterEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SysForms\LoginForms\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SysForms\LoginForms\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SysForms\LoginForms\frmManageShorCut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SysForms\LoginForms\frmManageShorCut.Designer.cs">
+      <DependentUpon>frmManageShorCut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SysForms\LoginForms\frmReLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SysForms\LoginForms\frmReLogin.Designer.cs">
+      <DependentUpon>frmReLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SysForms\LoginForms\frmShortCut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SysForms\LoginForms\frmShortCut.Designer.cs">
+      <DependentUpon>frmShortCut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SysForms\LoginForms\frmSqlLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SysForms\LoginForms\frmSqlLogin.Designer.cs">
+      <DependentUpon>frmSqlLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SysForms\LoginForms\frmSQLManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SysForms\LoginForms\frmSQLManagement.Designer.cs">
+      <DependentUpon>frmSQLManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SysForms\LoginForms\QueryPropertiesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SysForms\LoginForms\QueryPropertiesDialog.Designer.cs">
+      <DependentUpon>QueryPropertiesDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SysForms\SysConfigForms\frmSystemConfigs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SysForms\SysConfigForms\frmSystemConfigs.Designer.cs">
+      <DependentUpon>frmSystemConfigs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SysRights\frmUserChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SysRights\frmUserChangePassword.Designer.cs">
+      <DependentUpon>frmUserChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TestForms\frmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TestForms\frmTest.Designer.cs">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TestForms\TestControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TestForms\TestControl.Designer.cs">
+      <DependentUpon>TestControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TestForms\TestDetailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TestForms\TestDetailControl.Designer.cs">
+      <DependentUpon>TestDetailControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tool\frmLangChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tool\frmLangChange.Designer.cs">
+      <DependentUpon>frmLangChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu.designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Margin\frmSystemAddAuth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Margin\frmSystemAddAuth.Designer.cs">
+      <DependentUpon>frmSystemAddAuth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataClass\Helper\MySQLHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Controls\KillSumControl.resx">
+      <DependentUpon>KillSumControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SystemControl\BaseSettingControl.resx">
+      <DependentUpon>BaseSettingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SystemControl\CreateDBReIndexControl.resx">
+      <DependentUpon>CreateDBReIndexControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SystemControl\QueryDesignerControl.resx">
+      <DependentUpon>QueryDesignerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SystemControl\QueryResultControl.resx">
+      <DependentUpon>QueryResultControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SystemControl\RemoveHistoryDataControl.resx">
+      <DependentUpon>RemoveHistoryDataControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SystemControl\SqlCompressControl.resx">
+      <DependentUpon>SqlCompressControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SystemControl\StartUpConfigControl.resx">
+      <DependentUpon>StartUpConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TopPanelControl.resx">
+      <DependentUpon>TopPanelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseForms\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseForms\BaseQueryForm.resx">
+      <DependentUpon>BaseQueryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseForms\ProgressForm.resx">
+      <DependentUpon>ProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DAP\frmCrossKey.resx">
+      <DependentUpon>frmCrossKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DAP\frmSendRequest.resx">
+      <DependentUpon>frmSendRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DAP\frmSetDBServer.resx">
+      <DependentUpon>frmSetDBServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DAP\frmSyncDapMetadata.resx">
+      <DependentUpon>frmSyncDapMetadata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DAP\InitIDE\frmInitIDE.resx">
+      <DependentUpon>frmInitIDE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DAP\SelectWindow\frmParameter.resx">
+      <DependentUpon>frmParameter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DAP\SelectWindow\frmSelectDapVersion.resx">
+      <DependentUpon>frmSelectDapVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DataForms\frmCheckData.resx">
+      <DependentUpon>frmCheckData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DataForms\Grid\frmDataGrid.resx">
+      <DependentUpon>frmDataGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DataForms\Grid\frmDataGridViewColumns.resx">
+      <DependentUpon>frmDataGridViewColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Digiwin\frmDECode.resx">
+      <DependentUpon>frmDECode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Digiwin\frmE10Main.resx">
+      <DependentUpon>frmE10Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Digiwin\frmE10SearchMain.resx">
+      <DependentUpon>frmE10SearchMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Digiwin\frmHashCode.resx">
+      <DependentUpon>frmHashCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Digiwin\FrmSetting.resx">
+      <DependentUpon>FrmSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Digiwin\frmSQLFormat.resx">
+      <DependentUpon>frmSQLFormat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DocumentForms\frmHelpBrowser.resx">
+      <DependentUpon>frmHelpBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DocumentForms\frmHelpMain.resx">
+      <DependentUpon>frmHelpMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Margin\frmSystemAddAuth.resx">
+      <DependentUpon>frmSystemAddAuth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SysForms\BaseSettingForm.resx">
+      <DependentUpon>BaseSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SysForms\frmAboutForm.resx">
+      <DependentUpon>frmAboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SysForms\frmCheckUpdate.resx">
+      <DependentUpon>frmCheckUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SysForms\frmEditConfigFile.resx">
+      <DependentUpon>frmEditConfigFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SysForms\frmParityCode.resx">
+      <DependentUpon>frmParityCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SysForms\LoginForms\FilterEditorForm.resx">
+      <DependentUpon>FilterEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SysForms\LoginForms\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SysForms\LoginForms\frmManageShorCut.resx">
+      <DependentUpon>frmManageShorCut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SysForms\LoginForms\frmReLogin.resx">
+      <DependentUpon>frmReLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SysForms\LoginForms\frmShortCut.resx">
+      <DependentUpon>frmShortCut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SysForms\LoginForms\frmSqlLogin.resx">
+      <DependentUpon>frmSqlLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SysForms\LoginForms\frmSQLManagement.resx">
+      <DependentUpon>frmSQLManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SysForms\LoginForms\QueryPropertiesDialog.resx">
+      <DependentUpon>QueryPropertiesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SysForms\SysConfigForms\frmSystemConfigs.resx">
+      <DependentUpon>frmSystemConfigs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SysRights\frmUserChangePassword.resx">
+      <DependentUpon>frmUserChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestForms\frmTest.resx">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestForms\TestControl.resx">
+      <DependentUpon>TestControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestForms\TestDetailControl.resx">
+      <DependentUpon>TestDetailControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tool\frmLangChange.resx">
+      <DependentUpon>frmLangChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <Content Include="7z.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CSS3.0（语法）.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CSS中文完全参考手册.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Files\.gitignore">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="HTML5（W3CSchool版）.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Javascipt语言手册.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="jQuery1.11.0_20140330.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Files\application.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="MyTools_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logonew.ico" />
+    <Content Include="menu.xml" />
+    <Content Include="plant.xml" />
+    <Content Include="logo.ico" />
+    <Content Include="recent.xml" />
+    <Content Include="Reference\DevComponents.DotNetBar.dll" />
+    <Content Include="Reference\ICSharpCode.TextEditor.dll" />
+    <Content Include="Reference\SuperGrid.dll" />
+    <Content Include="Reference\YY.Common.dll" />
+    <Content Include="Reference\YY.Data.dll" />
+    <None Include="python352.chm" />
+    <None Include="Resources\HLine.bmp" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\adminuser.png" />
+    <Content Include="Resources\TopPanel.png" />
+    <None Include="Resources\menuform0.png" />
+    <None Include="Resources\menuform.png" />
+    <None Include="Resources\explorerform.png" />
+    <None Include="Resources\panelbackground.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\mylogin.png" />
+    <None Include="Resources\toolbarsave.png" />
+    <None Include="Resources\background.bmp" />
+    <None Include="Resources\detail.png" />
+    <None Include="Resources\db.png" />
+    <None Include="Resources\db1.png" />
+    <None Include="Resources\%2808,06%29.png" />
+    <None Include="Resources\logo.ico" />
+    <None Include="Resources\export.png" />
+    <None Include="Resources\excel.png" />
+    <None Include="Resources\folderopen.png" />
+    <None Include="Resources\foldeclose.png" />
+    <None Include="Resources\tabs.png" />
+    <None Include="Resources\picfoldr.ico" />
+    <None Include="Resources\picfolder.ico" />
+    <None Include="Resources\VLine.bmp" />
+    <None Include="Resources\top.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="menu.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="plant.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="recent.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

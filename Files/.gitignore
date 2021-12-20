@@ -1,0 +1,13 @@
+/develop/jdk/
+/develop/ide/
+/develop/module/AppCommon/
+/.idea/
+/running/
+/tool/
+/backup/
+/download/
+/develop/**/target/
+*.class
+*.lst
+*.iml
+temp.txt
