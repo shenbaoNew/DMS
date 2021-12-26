@@ -31,7 +31,7 @@ namespace DMS.Forms.DAP.SelectWindow {
 
             InitTool init = new InitTool();
             this.BuildParameter();
-            init.SaveRunnintParameter(parameters, projectPath);
+            init.SaveRunnintParameter(parameters, projectPath, this.chkRedisInit.Checked);
             MessageBox.Show("设置完成...");
         }
 

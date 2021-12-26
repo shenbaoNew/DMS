@@ -24,6 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.panel1 = new DevComponents.DotNetBar.PanelEx();
+            this.chkRedisInit = new System.Windows.Forms.CheckBox();
             this.txtRedisPwd = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txtRedisPort = new System.Windows.Forms.TextBox();
@@ -83,6 +84,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.chkRedisInit);
             this.panel1.Controls.Add(this.txtRedisPwd);
             this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.txtRedisPort);
@@ -140,8 +142,20 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(812, 747);
+            this.panel1.Size = new System.Drawing.Size(801, 743);
             this.panel1.TabIndex = 0;
+            // 
+            // chkRedisInit
+            // 
+            this.chkRedisInit.AutoSize = true;
+            this.chkRedisInit.Location = new System.Drawing.Point(521, 610);
+            this.chkRedisInit.Margin = new System.Windows.Forms.Padding(1);
+            this.chkRedisInit.Name = "chkRedisInit";
+            this.chkRedisInit.Size = new System.Drawing.Size(84, 17);
+            this.chkRedisInit.TabIndex = 53;
+            this.chkRedisInit.Tag = "redis";
+            this.chkRedisInit.Text = "初始化redis";
+            this.chkRedisInit.UseVisualStyleBackColor = true;
             // 
             // txtRedisPwd
             // 
@@ -688,7 +702,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 747);
+            this.ClientSize = new System.Drawing.Size(801, 743);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -759,5 +773,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtRedisPwd;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.CheckBox chkRedisInit;
     }
 }

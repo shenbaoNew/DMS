@@ -318,7 +318,7 @@ namespace DMS.Forms.DAP.InitIDE {
             return parameters;
         }
 
-        public void SaveRunnintParameter(List<DapParameter> parameters, string projectPath) {
+        public void SaveRunnintParameter(List<DapParameter> parameters, string projectPath,bool initRedis) {
             string appPath = Path.Combine(projectPath, InitParameter.APP_PROPERTIES_PATH);
             string dapPath = Path.Combine(projectPath, InitParameter.DAP_PROPERTIES_PATH);
             string proPath = Path.Combine(Environment.CurrentDirectory, "Files\\application.properties");
@@ -331,6 +331,9 @@ namespace DMS.Forms.DAP.InitIDE {
             foreach (DapParameter parameter in parameters) {
                 Regex regex = new Regex(parameter.Pattern);
                 Match match = null;
+                if (parameter.Name.Contains("redis") && !initRedis) {
+                    continue;
+                }
                 if (!parameter.IsPlatform) {
                     match = regex.Match(appContent);
                     if (match != null && match.Groups.Count == 2) {
@@ -349,6 +352,7 @@ namespace DMS.Forms.DAP.InitIDE {
                     proContent = proContent.Replace(match.Groups[1].Value, parameter.ToString());
                 }
             }
+            appContent += "\r\n";  //补一个空行
             File.WriteAllText(appPath, appContent);
             File.WriteAllText(dapPath, dapContent);
             File.WriteAllText(proPath, proContent);
