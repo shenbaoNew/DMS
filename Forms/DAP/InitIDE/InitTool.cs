@@ -27,9 +27,19 @@ namespace DMS.Forms.DAP.InitIDE {
             this.patch = patch;
             this.jdkPath = jdk;
             this.first = first;
+
+            //修改临时文件夹的名称为项目文件夹名称，将来模组会用到项目名
+            this.ChangeProjectFolderName();
         }
 
         public InitTool() {
+        }
+
+        private void ChangeProjectFolderName() {
+            DirectoryInfo info = new DirectoryInfo(this.projectPath);
+            if (info.Exists) {
+                InitParameter.NEW_DAP_RUN_PACKAGE_NAME = info.Name;
+            }
         }
 
         public void InitDapRunEnvironment() {
@@ -44,7 +54,7 @@ namespace DMS.Forms.DAP.InitIDE {
 
         public void InstallDWThirdPartyProject() {
             this.AppendText("开始安装第三方Lib模组...");
-            string dwThirdpartyProjectPath = Path.Combine(GetTempPath(), InitParameter.DAP_RUN_PACKAGE_NAME, "tool\\DWThirdPartyLibrary");
+            string dwThirdpartyProjectPath = Path.Combine(GetTempPath(), InitParameter.NEW_DAP_RUN_PACKAGE_NAME, "tool\\DWThirdPartyLibrary");
             string savePath = Path.Combine(this.developPath, "DWThirdPartyLibrary");
             CommonHelper.CopyDirectory(dwThirdpartyProjectPath, savePath);
             this.AppendText("安装第三方Lib模组完成!");
@@ -206,7 +216,7 @@ namespace DMS.Forms.DAP.InitIDE {
         }
 
         public string GetRunBatPath() {
-            string path = Path.Combine(GetTempPath(), InitParameter.DAP_RUN_PACKAGE_NAME, "tool");
+            string path = Path.Combine(GetTempPath(), InitParameter.NEW_DAP_RUN_PACKAGE_NAME, "tool");
             return path;
         }
 
@@ -228,9 +238,11 @@ namespace DMS.Forms.DAP.InitIDE {
             }
         }
 
-        public void UnZipDapPackageCallBack(object sender,EventArgs e) {
+        public void UnZipDapPackageCallBack(object sender, EventArgs e) {
             string filePath = this.GetTempPath();
             this.AppendText(string.Format("开发包解压完成===>{0}", filePath));
+            //修改文件夹名称
+            this.ChangeFolderName(filePath);
             //设置jdk路径
             this.SetJdkPath();
             //启动run.bat
@@ -241,8 +253,15 @@ namespace DMS.Forms.DAP.InitIDE {
             this.Finish();
         }
 
+        private void ChangeFolderName(string filePath) {
+            //重命名
+            if (InitParameter.DAP_RUN_PACKAGE_NAME != InitParameter.NEW_DAP_RUN_PACKAGE_NAME) {
+                Directory.Move(Path.Combine(filePath, InitParameter.DAP_RUN_PACKAGE_NAME), Path.Combine(filePath, InitParameter.NEW_DAP_RUN_PACKAGE_NAME));
+            }
+        }
+
         public void CopyDirectory() {
-            string source = Path.Combine(GetTempPath(), InitParameter.DAP_RUN_PACKAGE_NAME);
+            string source = Path.Combine(GetTempPath(), InitParameter.NEW_DAP_RUN_PACKAGE_NAME);
 
             if (this.first) {
                 CommonHelper.CopyDirectory(source, projectPath);

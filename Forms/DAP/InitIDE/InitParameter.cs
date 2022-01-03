@@ -13,6 +13,7 @@ namespace DMS.Forms.DAP.InitIDE {
         public const string FTP_PASSWORD = ">M_P0j";
         public const string DAP_PACKAGE_PRIFIX = "dwapiplatform-appbackend-dev-";
         public const string DAP_RUN_PACKAGE_NAME = "app_backend_dev";
+        public static string NEW_DAP_RUN_PACKAGE_NAME = "app_backend_dev";
         public const string NEXUS_IP = "https://repo.digiwincloud.com.cn/maven";
         public const string NEXUS_RUNNING_PACKAGE = "/service/rest/v1/search/assets/download?repository=releases&group=com.digiwin&name=dwapiplatform-appbackend&maven.extension=war&version=";
         public const string APP_PROPERTIES_PATH = @"running\app_backend\application\conf\application.properties";
