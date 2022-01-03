@@ -26,6 +26,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInitIDE));
             this.expandablePanel1 = new DevComponents.DotNetBar.ExpandablePanel();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnSelectVersion = new DevComponents.DotNetBar.ButtonX();
             this.lblFirst = new System.Windows.Forms.Label();
             this.chkFirst = new System.Windows.Forms.CheckBox();
@@ -72,6 +73,7 @@
             // 
             this.expandablePanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.expandablePanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.expandablePanel1.Controls.Add(this.label3);
             this.expandablePanel1.Controls.Add(this.btnSelectVersion);
             this.expandablePanel1.Controls.Add(this.lblFirst);
             this.expandablePanel1.Controls.Add(this.chkFirst);
@@ -92,7 +94,7 @@
             this.expandablePanel1.Controls.Add(this.label1);
             this.expandablePanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.expandablePanel1.ExpandButtonVisible = false;
-            this.expandablePanel1.Location = new System.Drawing.Point(0, 43);
+            this.expandablePanel1.Location = new System.Drawing.Point(0, 42);
             this.expandablePanel1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.expandablePanel1.Name = "expandablePanel1";
             this.expandablePanel1.Size = new System.Drawing.Size(1850, 1096);
@@ -113,6 +115,16 @@
             this.expandablePanel1.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.expandablePanel1.TitleStyle.GradientAngle = 90;
             this.expandablePanel1.TitleText = "DAP环境初始化";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(1100, 127);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(373, 29);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "项目文件夹最好以_backend结尾";
             // 
             // btnSelectVersion
             // 
@@ -445,7 +457,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(1850, 43);
+            this.toolStrip1.Size = new System.Drawing.Size(1850, 42);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -455,7 +467,7 @@
             this.tsbRanInit.Image = ((System.Drawing.Image)(resources.GetObject("tsbRanInit.Image")));
             this.tsbRanInit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbRanInit.Name = "tsbRanInit";
-            this.tsbRanInit.Size = new System.Drawing.Size(127, 40);
+            this.tsbRanInit.Size = new System.Drawing.Size(127, 39);
             this.tsbRanInit.Text = "升级工具";
             this.tsbRanInit.Click += new System.EventHandler(this.tsbRanInit_Click);
             // 
@@ -475,7 +487,7 @@
             this.tsbParameter.Image = ((System.Drawing.Image)(resources.GetObject("tsbParameter.Image")));
             this.tsbParameter.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbParameter.Name = "tsbParameter";
-            this.tsbParameter.Size = new System.Drawing.Size(127, 40);
+            this.tsbParameter.Size = new System.Drawing.Size(127, 39);
             this.tsbParameter.Text = "通用参数";
             this.tsbParameter.Click += new System.EventHandler(this.tsbParameter_Click);
             // 
@@ -542,5 +554,6 @@
         private System.Windows.Forms.ToolStripButton tsbDapVersion;
         private DevComponents.DotNetBar.ButtonX btnSelectVersion;
         private System.Windows.Forms.ToolStripButton tsbParameter;
+        private System.Windows.Forms.Label label3;
     }
 }

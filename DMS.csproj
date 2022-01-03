@@ -783,6 +783,7 @@
     <None Include="Resources\HLine.bmp" />
     <None Include="Resources\settings.png" />
     <None Include="Resources\adminuser.png" />
+    <Content Include="Resources\tip.jpg" />
     <Content Include="Resources\TopPanel.png" />
     <None Include="Resources\menuform0.png" />
     <None Include="Resources\menuform.png" />
