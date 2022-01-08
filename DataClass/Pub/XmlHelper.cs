@@ -44,6 +44,17 @@ namespace DMS
             return node;
         }
 
+        public static XmlNode GetNodeByPath(string path, XmlDocument xml, XmlNamespaceManager nsMgr) {
+            XmlNode node = null;
+            try {
+                node = xml.SelectSingleNode(path, nsMgr);
+            } catch {
+                return null;
+            }
+
+            return node;
+        }
+
         public static XmlNodeList GetNodesByPath(string path, XmlDocument xml)
         {
             XmlNodeList nodes = null;

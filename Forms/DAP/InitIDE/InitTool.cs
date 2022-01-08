@@ -8,6 +8,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Xml;
 
 namespace DMS.Forms.DAP.InitIDE {
     class InitTool {
@@ -249,6 +250,8 @@ namespace DMS.Forms.DAP.InitIDE {
             this.StartRunBat();
             //目录复制到项目目录
             this.CopyDirectory();
+            //追加appcenter相关pom配置
+            this.AppendAppCenterConfig();
             //初始化完毕
             this.Finish();
         }
@@ -270,6 +273,73 @@ namespace DMS.Forms.DAP.InitIDE {
                 CommonHelper.CopyDirectory(Path.Combine(source, ".idea"), Path.Combine(projectPath, ".idea"));
                 CommonHelper.CopyDirectory(Path.Combine(source, "running"), Path.Combine(projectPath, "running"));
                 CommonHelper.CopyDirectory(Path.Combine(source, "tool"), Path.Combine(projectPath, "tool"));
+            }
+        }
+
+        public void AppendAppCenterConfig() {
+            if (this.first) {
+                this.AppendAppCenterNode(Path.Combine(projectPath, "develop\\module\\pom.xml"));
+                this.AppendAppCenterNode(Path.Combine(projectPath, "develop\\DWThirdPartyLibrary\\pom.xml"));
+            }
+        }
+
+        public void AppendAppCenterNode(string pomPath) {
+            XmlDocument xml = new XmlDocument();
+            try {
+                xml.Load(pomPath);
+                string nsUrl = xml.FirstChild.NamespaceURI;
+                XmlNamespaceManager nsMgr = new XmlNamespaceManager(xml.NameTable);
+                nsMgr.AddNamespace("ns", nsUrl);
+                XmlNode project = XmlHelper.GetNodeByPath(@"/ns:project", xml, nsMgr);
+
+                //追加nexus.ip,appcenter.verion
+                XmlNode properties = XmlHelper.GetNodeByPath(@"/ns:project/ns:properties", xml, nsMgr);
+                XmlNode nexusIp = XmlHelper.GetNodeByPath(@"/ns:project/ns:properties/ns:nexus.ip", xml, nsMgr);
+                if (nexusIp == null) {
+                    nexusIp = xml.CreateElement("nexus.ip", nsUrl);
+                    nexusIp.InnerText = "https://repo.digiwincloud.com.cn/maven";
+                    properties.AppendChild(nexusIp);
+                }
+                XmlNode appVersioin = xml.CreateElement("appcenter.version", nsUrl);
+                appVersioin.InnerText = this.version + ".32";
+                properties.AppendChild(appVersioin);
+
+                //追加repository
+                XmlNode repositories = XmlHelper.GetNodeByPath(@"/ns:project/ns:repositories", xml, nsMgr);
+                if (repositories == null) {
+                    repositories = xml.CreateElement("repositories", nsUrl);
+                    project.InsertAfter(repositories, properties);
+                }
+                XmlNode repository = xml.CreateElement("repository", nsUrl);
+                repositories.AppendChild(repository);
+                //添加id，name，url
+                XmlNode id = xml.CreateElement("id", nsUrl);
+                id.InnerText = "appcenter";
+                repository.AppendChild(id);
+                XmlNode name = xml.CreateElement("name", nsUrl);
+                name.InnerText = "appcenter Releases Repository";
+                repository.AppendChild(name);
+                XmlNode url = xml.CreateElement("url", nsUrl);
+                url.InnerText = "${nexus.ip}/content/groups/appcenter/";
+                repository.AppendChild(url);
+
+                //追加dependences
+                XmlNode dependencies = XmlHelper.GetNodeByPath(@"/ns:project/ns:dependencies", xml, nsMgr);
+                XmlNode dependency = xml.CreateElement("dependency", nsUrl);
+                dependencies.AppendChild(dependency);
+                //添加groupId，artifactId，version
+                XmlNode groupId = xml.CreateElement("groupId", nsUrl);
+                groupId.InnerText = "com.digiwin.appcenter";
+                dependency.AppendChild(groupId);
+                XmlNode artifactId = xml.CreateElement("artifactId", nsUrl);
+                artifactId.InnerText = "appcenter-common";
+                dependency.AppendChild(artifactId);
+                XmlNode version = xml.CreateElement("version", nsUrl);
+                version.InnerText = "${appcenter.version}";
+                dependency.AppendChild(version);
+
+                xml.Save(pomPath); 
+            } catch { 
             }
         }
 
