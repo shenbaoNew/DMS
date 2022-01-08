@@ -338,7 +338,12 @@ namespace DMS.Forms.DAP.InitIDE {
                 version.InnerText = "${appcenter.version}";
                 dependency.AppendChild(version);
 
-                xml.Save(pomPath); 
+                xml.Save(pomPath);
+                //XmlTextWriter xw = new XmlTextWriter(pomPath, null);
+                //xw.Formatting = Formatting.Indented;
+                //xw.Indentation = 4;
+                //xml.Save(xw);
+                //xw.Close();
             } catch { 
             }
         }
