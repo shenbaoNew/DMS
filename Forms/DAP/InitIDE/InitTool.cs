@@ -46,7 +46,7 @@ namespace DMS.Forms.DAP.InitIDE {
         public void InitDapRunEnvironment() {
             this.ClearTempPath();
             bool success = this.DownloadDapRunPackageFromFTP();
-            success = success && this.UnZipDapPackage();
+            success = success && this.UnZipDapPackage(UnZipDapPackageCallBackOnInit);
            
             //this.InstallDWThirdPartyProject();
             //this.InstallRunningPackage();
@@ -265,12 +265,12 @@ namespace DMS.Forms.DAP.InitIDE {
             this.log.AppendText(Environment.NewLine);
         }
 
-        public bool UnZipDapPackage() {
+        public bool UnZipDapPackage(EventHandler<EventArgs> afterUnZipEvent) {
             this.AppendText("开始解压缩dap开发包...");
             try {
                 string fileName = this.GetLocalFileFullName();
                 string filePath = this.GetTempPath();
-                CommonHelper.UnZip(fileName, filePath, UnZipDapPackageCallBack);
+                CommonHelper.UnZip(fileName, filePath, afterUnZipEvent);
                 return true;
             } catch (Exception ex) {
                 this.AppendText("解压缩dap开发包出错：" + ex.Message);
@@ -278,7 +278,7 @@ namespace DMS.Forms.DAP.InitIDE {
             }
         }
 
-        public void UnZipDapPackageCallBack(object sender, EventArgs e) {
+        public void UnZipDapPackageCallBackOnInit(object sender, EventArgs e) {
             string filePath = this.GetTempPath();
             this.AppendText(string.Format("开发包解压完成===>{0}", filePath));
             //修改文件夹名称
@@ -317,6 +317,7 @@ namespace DMS.Forms.DAP.InitIDE {
 
         public void AppendAppCenterConfig() {
             if (this.first) {
+                this.AppendText("配置修改module\\pom.xml(nexus地址配置,appcenter默认版本配置)...");
                 this.AppendAppCenterNode(Path.Combine(projectPath, "develop\\module\\pom.xml"));
                 this.AppendAppCenterNode(Path.Combine(projectPath, "develop\\DWThirdPartyLibrary\\pom.xml"));
             }
@@ -490,5 +491,118 @@ namespace DMS.Forms.DAP.InitIDE {
             File.WriteAllText(dapPath, dapContent);
             File.WriteAllText(proPath, proContent);
         }
+
+        #region 版本升级
+        public void UpgradeDapRunEnvironment() {
+            this.ClearTempPath();
+            bool success = this.DownloadDapRunPackageFromFTP();
+            success = success && this.UnZipDapPackage(UnZipDapPackageCallBackOnUpgrade);
+
+            //this.InstallDWThirdPartyProject();
+            //this.InstallRunningPackage();
+            //this.SettingConfigs();
+        }
+
+        public void UnZipDapPackageCallBackOnUpgrade(object sender, EventArgs e) {
+            string filePath = this.GetTempPath();
+            this.AppendText(string.Format("开发包解压完成===>{0}", filePath));
+            //修改文件夹名称
+            this.ChangeFolderName(filePath);
+            //备份配置文件
+            this.BulkConfigFile();
+            //设置jdk路径
+            this.SetJdkPath();
+            //升级新版本tool
+            this.UpgradeNewTool();
+            //启动run.bat
+            this.RunUpgradeBat();
+            //升级相关pom版本
+            this.UpgradePomVersion();
+            //还原配置文件内容
+            ReductionConfigFile();
+            //升级完毕
+            this.FinishUpgrade();
+        }
+
+        private void BulkConfigFile() {
+            string bulkPath = Path.Combine(projectPath, "backup");
+            if (!Directory.Exists(bulkPath)) {
+                Directory.CreateDirectory(bulkPath);
+            }
+            this.AppendText(string.Format("备份配置文件===>{0}", bulkPath));
+            File.Copy(Path.Combine(projectPath, "running\\app_backend\\application\\conf\\application.properties")
+                , Path.Combine(bulkPath, "application.properties"), true);
+            File.Copy(Path.Combine(projectPath, "running\\app_backend\\platform\\conf\\platform.properties")
+                , Path.Combine(bulkPath, "platform.properties"), true);
+        }
+
+        public void UpgradeNewTool() {
+            this.AppendText(string.Format("升级新版tool..."));
+            string source = Path.Combine(GetTempPath(), InitParameter.NEW_DAP_RUN_PACKAGE_NAME);
+            if (Directory.Exists(Path.Combine(projectPath, "backup\\tool"))) {
+                Directory.Delete(Path.Combine(projectPath, "backup\\tool"), true);
+            }
+            Directory.Move(Path.Combine(projectPath, "tool"), Path.Combine(projectPath, "backup\\tool"));
+            CommonHelper.CopyDirectory(Path.Combine(source, "tool"), Path.Combine(projectPath, "tool"));
+        }
+
+        private void UpgradePomVersion() {
+            this.AppendText(string.Format("升级模组版本..."));
+            string pomPath= Path.Combine(projectPath, "develop\\module\\pom.xml");
+            XmlDocument xml = new XmlDocument();
+            try {
+                xml.Load(pomPath);
+                string nsUrl = xml.FirstChild.NamespaceURI;
+                XmlNamespaceManager nsMgr = new XmlNamespaceManager(xml.NameTable);
+                nsMgr.AddNamespace("ns", nsUrl);
+                XmlNode project = XmlHelper.GetNodeByPath(@"/ns:project", xml, nsMgr);
+
+                //追加nexus.ip,appcenter.verion
+                XmlNode properties = XmlHelper.GetNodeByPath(@"/ns:project/ns:properties", xml, nsMgr);
+                XmlNode apiVersion = XmlHelper.GetNodeByPath(@"/ns:project/ns:properties/ns:api.version", xml, nsMgr);
+                if (apiVersion != null) {
+                    apiVersion.InnerText = this.patch;
+                }
+
+                xml.Save(pomPath);
+                //XmlTextWriter xw = new XmlTextWriter(pomPath, null);
+                //xw.Formatting = Formatting.Indented;
+                //xw.Indentation = 4;
+                //xml.Save(xw);
+                //xw.Close();
+            } catch {
+            }
+        }
+
+        public void RunUpgradeBat() {
+            this.AppendText("开始执行环境升级...");
+            string path = Path.Combine(projectPath, "tool");
+            Process proc = new Process();
+            string targetDir = string.Format(path);
+
+            proc.StartInfo.WorkingDirectory = targetDir;
+            proc.StartInfo.FileName = "run.bat";
+
+            proc.Start();
+            proc.WaitForExit();
+        }
+
+        public void ReductionConfigFile() {
+            this.AppendText(string.Format("还原配置文件..."));
+            string bulkPath = Path.Combine(projectPath, "backup");
+            File.Copy(Path.Combine(bulkPath, "application.properties")
+                , Path.Combine(projectPath, "running\\app_backend\\application\\conf\\application.properties")
+              , true);
+            File.Copy(Path.Combine(bulkPath, "platform.properties")
+                , Path.Combine(projectPath, "running\\app_backend\\platform\\conf\\platform.properties")
+                , true);
+        }
+
+        public void FinishUpgrade() {
+            //删除临时目录
+            Directory.Delete(GetTempPath(), true);
+            this.AppendText("环境升级完毕...");
+        }
+        #endregion
     }
 }

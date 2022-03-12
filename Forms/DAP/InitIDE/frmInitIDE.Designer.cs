@@ -63,6 +63,7 @@
             this.tsbRanInit = new System.Windows.Forms.ToolStripButton();
             this.tsbDapVersion = new System.Windows.Forms.ToolStripButton();
             this.tsbParameter = new System.Windows.Forms.ToolStripButton();
+            this.btnUpgrade = new DevComponents.DotNetBar.ButtonX();
             this.expandablePanel1.SuspendLayout();
             this.groupLog.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -73,6 +74,7 @@
             // 
             this.expandablePanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.expandablePanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.expandablePanel1.Controls.Add(this.btnUpgrade);
             this.expandablePanel1.Controls.Add(this.label3);
             this.expandablePanel1.Controls.Add(this.btnSelectVersion);
             this.expandablePanel1.Controls.Add(this.lblFirst);
@@ -164,7 +166,7 @@
             this.btnSaveConfig.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSaveConfig.AutoExpandOnClick = true;
             this.btnSaveConfig.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSaveConfig.Location = new System.Drawing.Point(534, 407);
+            this.btnSaveConfig.Location = new System.Drawing.Point(775, 407);
             this.btnSaveConfig.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnSaveConfig.Name = "btnSaveConfig";
             this.btnSaveConfig.Size = new System.Drawing.Size(243, 66);
@@ -290,7 +292,7 @@
             this.btnStartInit.Name = "btnStartInit";
             this.btnStartInit.Size = new System.Drawing.Size(243, 66);
             this.btnStartInit.TabIndex = 13;
-            this.btnStartInit.Text = "开始初始化";
+            this.btnStartInit.Text = "环境搭建";
             this.btnStartInit.Click += new System.EventHandler(this.btnStartInit_Click);
             // 
             // cmbVersion
@@ -491,6 +493,19 @@
             this.tsbParameter.Text = "通用参数";
             this.tsbParameter.Click += new System.EventHandler(this.tsbParameter_Click);
             // 
+            // btnUpgrade
+            // 
+            this.btnUpgrade.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnUpgrade.AutoExpandOnClick = true;
+            this.btnUpgrade.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnUpgrade.Location = new System.Drawing.Point(506, 407);
+            this.btnUpgrade.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.btnUpgrade.Name = "btnUpgrade";
+            this.btnUpgrade.Size = new System.Drawing.Size(243, 66);
+            this.btnUpgrade.TabIndex = 23;
+            this.btnUpgrade.Text = "环境升级";
+            this.btnUpgrade.Click += new System.EventHandler(this.btnUpgrade_Click);
+            // 
             // frmInitIDE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
@@ -555,5 +570,6 @@
         private DevComponents.DotNetBar.ButtonX btnSelectVersion;
         private System.Windows.Forms.ToolStripButton tsbParameter;
         private System.Windows.Forms.Label label3;
+        private DevComponents.DotNetBar.ButtonX btnUpgrade;
     }
 }

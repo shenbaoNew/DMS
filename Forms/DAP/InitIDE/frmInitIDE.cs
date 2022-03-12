@@ -85,11 +85,13 @@ namespace DMS.Forms {
                 MessageBox.Show("请输入运行环境版本");
                 return;
             }
-            this.txtLog.Text = "";
-            InitTool tool = new InitTool(this.txtLog, this.txtPath.Text.Trim(), this.GetVersion(), this.cmbVersion.Text.Trim()
-                , this.txtJdkPath.Text.Trim()
-                , this.chkFirst.Checked);
-            tool.InitDapRunEnvironment();
+            if (MessageBox.Show("确定要执行环境搭建吗?", "请确认", MessageBoxButtons.OKCancel) == DialogResult.OK) {
+                this.txtLog.Text = "";
+                InitTool tool = new InitTool(this.txtLog, this.txtPath.Text.Trim(), this.GetVersion(), this.cmbVersion.Text.Trim()
+                    , this.txtJdkPath.Text.Trim()
+                    , this.chkFirst.Checked);
+                tool.InitDapRunEnvironment();
+            }
         }
 
         private string GetVersion() {
@@ -221,6 +223,28 @@ namespace DMS.Forms {
         private void tsbParameter_Click(object sender, EventArgs e) {
             frmParameter parameter = new frmParameter(this.txtPath.Text.Trim());
             parameter.ShowDialog();
+        }
+
+        private void btnUpgrade_Click(object sender, EventArgs e) {
+            if (string.IsNullOrEmpty(this.txtPath.Text.Trim())) {
+                MessageBox.Show("请输入DAP项目路径");
+                return;
+            }
+            if (string.IsNullOrEmpty(this.txtJdkPath.Text.Trim())) {
+                MessageBox.Show("请输入OpenJDK路径");
+                return;
+            }
+            if (string.IsNullOrEmpty(this.cmbVersion.Text.Trim())) {
+                MessageBox.Show("请输入运行环境版本");
+                return;
+            }
+            if (MessageBox.Show("确定要执行环境升级吗?", "请确认", MessageBoxButtons.OKCancel) == DialogResult.OK) {
+                this.txtLog.Text = "";
+                InitTool tool = new InitTool(this.txtLog, this.txtPath.Text.Trim(), this.GetVersion(), this.cmbVersion.Text.Trim()
+                    , this.txtJdkPath.Text.Trim()
+                    , this.chkFirst.Checked);
+                tool.UpgradeDapRunEnvironment();
+            }
         }
     }
 }
