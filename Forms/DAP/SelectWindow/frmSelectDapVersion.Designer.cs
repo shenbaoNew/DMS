@@ -34,6 +34,8 @@
             this.lsbPatch = new System.Windows.Forms.ListBox();
             this.btnLoadPatch = new DevComponents.DotNetBar.ButtonX();
             this.panel2 = new DevComponents.DotNetBar.PanelEx();
+            this.btnDownLoadPatch = new DevComponents.DotNetBar.ButtonX();
+            this.selectFolder = new System.Windows.Forms.FolderBrowserDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -54,9 +56,10 @@
             this.btnLoad.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnLoad.AutoExpandOnClick = true;
             this.btnLoad.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnLoad.Location = new System.Drawing.Point(3, 5);
+            this.btnLoad.Location = new System.Drawing.Point(8, 11);
+            this.btnLoad.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(70, 23);
+            this.btnLoad.Size = new System.Drawing.Size(175, 51);
             this.btnLoad.TabIndex = 19;
             this.btnLoad.Text = "加载大版";
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
@@ -66,9 +69,10 @@
             this.btnOK.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnOK.AutoExpandOnClick = true;
             this.btnOK.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnOK.Location = new System.Drawing.Point(425, 5);
+            this.btnOK.Location = new System.Drawing.Point(1062, 11);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(56, 23);
+            this.btnOK.Size = new System.Drawing.Size(140, 51);
             this.btnOK.TabIndex = 22;
             this.btnOK.Text = "确定";
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -78,9 +82,10 @@
             this.btnCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnCancel.AutoExpandOnClick = true;
             this.btnCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnCancel.Location = new System.Drawing.Point(500, 5);
+            this.btnCancel.Location = new System.Drawing.Point(1250, 11);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(56, 23);
+            this.btnCancel.Size = new System.Drawing.Size(140, 51);
             this.btnCancel.TabIndex = 23;
             this.btnCancel.Text = "取消";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -90,9 +95,9 @@
             this.panel1.Controls.Add(this.splitContainer1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(580, 390);
+            this.panel1.Size = new System.Drawing.Size(1420, 781);
             this.panel1.TabIndex = 24;
             // 
             // splitContainer1
@@ -101,7 +106,7 @@
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(1);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -111,9 +116,9 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer1.Size = new System.Drawing.Size(580, 390);
+            this.splitContainer1.Size = new System.Drawing.Size(1420, 781);
             this.splitContainer1.SplitterDistance = 264;
-            this.splitContainer1.SplitterWidth = 2;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -122,7 +127,7 @@
             this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer2.IsSplitterFixed = true;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(1);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             this.splitContainer2.Panel1Collapsed = true;
@@ -130,19 +135,19 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.lsbVersion);
-            this.splitContainer2.Size = new System.Drawing.Size(264, 390);
+            this.splitContainer2.Size = new System.Drawing.Size(264, 781);
             this.splitContainer2.SplitterDistance = 80;
-            this.splitContainer2.SplitterWidth = 2;
             this.splitContainer2.TabIndex = 0;
             // 
             // lsbVersion
             // 
             this.lsbVersion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lsbVersion.FormattingEnabled = true;
+            this.lsbVersion.ItemHeight = 29;
             this.lsbVersion.Location = new System.Drawing.Point(0, 0);
-            this.lsbVersion.Margin = new System.Windows.Forms.Padding(1);
+            this.lsbVersion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lsbVersion.Name = "lsbVersion";
-            this.lsbVersion.Size = new System.Drawing.Size(264, 390);
+            this.lsbVersion.Size = new System.Drawing.Size(264, 781);
             this.lsbVersion.TabIndex = 1;
             // 
             // splitContainer3
@@ -151,7 +156,7 @@
             this.splitContainer3.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer3.IsSplitterFixed = true;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Margin = new System.Windows.Forms.Padding(1);
+            this.splitContainer3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer3.Name = "splitContainer3";
             this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
             this.splitContainer3.Panel1Collapsed = true;
@@ -159,19 +164,19 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.lsbPatch);
-            this.splitContainer3.Size = new System.Drawing.Size(314, 390);
+            this.splitContainer3.Size = new System.Drawing.Size(1151, 781);
             this.splitContainer3.SplitterDistance = 80;
-            this.splitContainer3.SplitterWidth = 2;
             this.splitContainer3.TabIndex = 0;
             // 
             // lsbPatch
             // 
             this.lsbPatch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lsbPatch.FormattingEnabled = true;
+            this.lsbPatch.ItemHeight = 29;
             this.lsbPatch.Location = new System.Drawing.Point(0, 0);
-            this.lsbPatch.Margin = new System.Windows.Forms.Padding(1);
+            this.lsbPatch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lsbPatch.Name = "lsbPatch";
-            this.lsbPatch.Size = new System.Drawing.Size(314, 390);
+            this.lsbPatch.Size = new System.Drawing.Size(1151, 781);
             this.lsbPatch.TabIndex = 21;
             // 
             // btnLoadPatch
@@ -179,37 +184,52 @@
             this.btnLoadPatch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnLoadPatch.AutoExpandOnClick = true;
             this.btnLoadPatch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnLoadPatch.Location = new System.Drawing.Point(107, 5);
+            this.btnLoadPatch.Location = new System.Drawing.Point(209, 11);
+            this.btnLoadPatch.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnLoadPatch.Name = "btnLoadPatch";
-            this.btnLoadPatch.Size = new System.Drawing.Size(70, 23);
+            this.btnLoadPatch.Size = new System.Drawing.Size(175, 51);
             this.btnLoadPatch.TabIndex = 22;
             this.btnLoadPatch.Text = "加载Patch";
             this.btnLoadPatch.Click += new System.EventHandler(this.btnLoadPatch_Click);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnDownLoadPatch);
             this.panel2.Controls.Add(this.btnLoadPatch);
             this.panel2.Controls.Add(this.btnLoad);
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Controls.Add(this.btnOK);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 390);
-            this.panel2.Margin = new System.Windows.Forms.Padding(1);
+            this.panel2.Location = new System.Drawing.Point(0, 781);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(580, 35);
+            this.panel2.Size = new System.Drawing.Size(1420, 78);
             this.panel2.TabIndex = 25;
+            // 
+            // btnDownLoadPatch
+            // 
+            this.btnDownLoadPatch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnDownLoadPatch.AutoExpandOnClick = true;
+            this.btnDownLoadPatch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnDownLoadPatch.Location = new System.Drawing.Point(416, 11);
+            this.btnDownLoadPatch.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.btnDownLoadPatch.Name = "btnDownLoadPatch";
+            this.btnDownLoadPatch.Size = new System.Drawing.Size(175, 51);
+            this.btnDownLoadPatch.TabIndex = 24;
+            this.btnDownLoadPatch.Text = "下载Patch";
+            this.btnDownLoadPatch.Click += new System.EventHandler(this.btnDownLoadPatch_Click);
             // 
             // frmSelectDapVersion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 425);
+            this.ClientSize = new System.Drawing.Size(1420, 859);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(596, 464);
-            this.MinimumSize = new System.Drawing.Size(596, 464);
+            this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.MaximumSize = new System.Drawing.Size(1448, 938);
+            this.MinimumSize = new System.Drawing.Size(1448, 938);
             this.Name = "frmSelectDapVersion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.TabText = "BaseForm";
@@ -244,5 +264,7 @@
         private DevComponents.DotNetBar.ButtonX btnLoadPatch;
         private System.Windows.Forms.ListBox lsbPatch;
         private DevComponents.DotNetBar.PanelEx panel2;
+        private DevComponents.DotNetBar.ButtonX btnDownLoadPatch;
+        private System.Windows.Forms.FolderBrowserDialog selectFolder;
     }
 }

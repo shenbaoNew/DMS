@@ -129,7 +129,7 @@ namespace DMS.Forms.DAP.InitIDE {
                 string localFileName = GetLocalFileFullName();
                 outputStream = new FileStream(localFileName, FileMode.Create);
                 //FTP文件路径
-                string ftpFileName = GetFtpFileFullName();
+                string ftpFileName = GetFtpFileFullName(this.version,this.patch);
                 reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftpFileName));
                 reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
                 reqFTP.UseBinary = true;
@@ -161,9 +161,48 @@ namespace DMS.Forms.DAP.InitIDE {
                 }
             }
         }
+
+        public bool DownLoadPatch(string version, string patch, string path) {
+            FtpWebRequest reqFTP = null;
+            FileStream outputStream = null;
+            Stream ftpStream = null;
+            FtpWebResponse response = null;
+            try {
+                //下载到本地的文件路径
+                string localFileName = Path.Combine(path, InitParameter.DAP_PACKAGE_PRIFIX + patch + ".war"); ;
+                outputStream = new FileStream(localFileName, FileMode.Create);
+                //FTP文件路径
+                string ftpFileName = GetFtpFileFullName(version, patch);
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftpFileName));
+                reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
+                reqFTP.UseBinary = true;
+                reqFTP.Credentials = new NetworkCredential(InitParameter.FTP_USER, InitParameter.FTP_PASSWORD);
+                response = (FtpWebResponse)reqFTP.GetResponse();
+                ftpStream = response.GetResponseStream();
+                long cl = response.ContentLength;
+                int bufferSize = 2048;
+                int readCount = 0;
+                byte[] buffer = new byte[bufferSize];
+
+                while ((readCount = ftpStream.Read(buffer, 0, bufferSize)) > 0) {
+                    outputStream.Write(buffer, 0, readCount);
+                }
+                return true;
+            } finally {
+                if (ftpStream != null) {
+                    ftpStream.Close();
+                }
+                if (outputStream != null) {
+                    outputStream.Close();
+                }
+                if (response != null) {
+                    response.Close();
+                }
+            }
+        }
         
 
-        public string GetFtpFileFullName() {
+        public string GetFtpFileFullName(string version,string patch) {
             StringBuilder fileName = new StringBuilder();
             fileName.Append("ftp://" + InitParameter.FTP_SERVER);
             fileName.Append(string.Format("/STS Release/{0}.1000 STS", version));

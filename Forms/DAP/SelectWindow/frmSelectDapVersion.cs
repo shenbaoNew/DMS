@@ -47,5 +47,22 @@ namespace DMS.Forms.DAP.SelectWindow {
         private void btnCancel_Click(object sender, EventArgs e) {
             this.DialogResult = DialogResult.Cancel;
         }
+
+        private void btnDownLoadPatch_Click(object sender, EventArgs e) {
+            if (this.lsbPatch.SelectedItem != null) {
+                if (this.selectFolder.ShowDialog() == DialogResult.OK) {
+                    InitTool tool = new InitTool();
+                    try {
+                        tool.DownLoadPatch(this.lsbVersion.SelectedItem.ToString(), this.lsbPatch.SelectedItem.ToString()
+                            , selectFolder.SelectedPath);
+                        MessageBox.Show("下载成功");
+                    } catch (Exception ex) {
+                        MessageBox.Show("下载失败," + ex.Message);
+                    }
+                }
+            } else {
+                MessageBox.Show("请选择path版本");
+            }
+        }
     }
 }
