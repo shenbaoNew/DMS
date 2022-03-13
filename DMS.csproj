@@ -175,12 +175,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\KillSumControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\KillSumControl.Designer.cs">
-      <DependentUpon>KillSumControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\SystemControl\BaseSettingControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -348,64 +342,64 @@
     <Compile Include="Forms\TestForms\Grid\frmDataGridViewColumns.designer.cs">
       <DependentUpon>frmDataGridViewColumns.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Digiwin\EncodeAndDecode.cs" />
-    <Compile Include="Forms\Digiwin\ExtendedWebBrowser.cs">
+    <Compile Include="Forms\E10\EncodeAndDecode.cs" />
+    <Compile Include="Forms\E10\ExtendedWebBrowser.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\Digiwin\frmDECode.cs">
+    <Compile Include="Forms\E10\frmDECode.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Digiwin\frmDECode.Designer.cs">
+    <Compile Include="Forms\E10\frmDECode.Designer.cs">
       <DependentUpon>frmDECode.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Digiwin\frmE10Main.cs">
+    <Compile Include="Forms\E10\frmE10Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Digiwin\frmE10Main.Designer.cs">
+    <Compile Include="Forms\E10\frmE10Main.Designer.cs">
       <DependentUpon>frmE10Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Digiwin\frmE10SearchMain.cs">
+    <Compile Include="Forms\E10\frmE10SearchMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Digiwin\frmE10SearchMain.Designer.cs">
+    <Compile Include="Forms\E10\frmE10SearchMain.Designer.cs">
       <DependentUpon>frmE10SearchMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Digiwin\frmHashCode.cs">
+    <Compile Include="Forms\E10\frmHashCode.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Digiwin\frmHashCode.Designer.cs">
+    <Compile Include="Forms\E10\frmHashCode.Designer.cs">
       <DependentUpon>frmHashCode.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Digiwin\FrmSetting.cs">
+    <Compile Include="Forms\E10\FrmSetting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Digiwin\FrmSetting.designer.cs">
+    <Compile Include="Forms\E10\FrmSetting.designer.cs">
       <DependentUpon>FrmSetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Digiwin\frmSQLFormat.cs">
+    <Compile Include="Forms\Tool\frmSQLFormat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Digiwin\frmSQLFormat.Designer.cs">
+    <Compile Include="Forms\Tool\frmSQLFormat.Designer.cs">
       <DependentUpon>frmSQLFormat.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Digiwin\SettingPara.cs" />
-    <Compile Include="Forms\DocumentForms\frmHelpBrowser.cs">
+    <Compile Include="Forms\E10\SettingPara.cs" />
+    <Compile Include="Forms\Help\frmHelpBrowser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DocumentForms\frmHelpBrowser.designer.cs">
+    <Compile Include="Forms\Help\frmHelpBrowser.designer.cs">
       <DependentUpon>frmHelpBrowser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DocumentForms\frmHelpMain.cs">
+    <Compile Include="Forms\Help\frmHelpMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DocumentForms\frmHelpMain.designer.cs">
+    <Compile Include="Forms\Help\frmHelpMain.designer.cs">
       <DependentUpon>frmHelpMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DocumentForms\HelpManager.cs" />
-    <Compile Include="Forms\Form1.cs">
+    <Compile Include="Forms\Help\HelpManager.cs" />
+    <Compile Include="Forms\TestForms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form1.Designer.cs">
+    <Compile Include="Forms\TestForms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SplashClass.cs" />
@@ -421,34 +415,28 @@
     <Compile Include="Forms\SysForms\BaseSettingForm.Designer.cs">
       <DependentUpon>BaseSettingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SysForms\frmAboutForm.cs">
+    <Compile Include="Forms\Help\frmAboutForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SysForms\frmAboutForm.Designer.cs">
+    <Compile Include="Forms\Help\frmAboutForm.Designer.cs">
       <DependentUpon>frmAboutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SysForms\frmCheckUpdate.cs">
+    <Compile Include="Forms\Help\frmCheckUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SysForms\frmCheckUpdate.Designer.cs">
+    <Compile Include="Forms\Help\frmCheckUpdate.Designer.cs">
       <DependentUpon>frmCheckUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SysForms\frmEditConfigFile.cs">
+    <Compile Include="Forms\Tool\frmEditConfigFile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SysForms\frmEditConfigFile.Designer.cs">
+    <Compile Include="Forms\Tool\frmEditConfigFile.Designer.cs">
       <DependentUpon>frmEditConfigFile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SysForms\frmParityCode.cs">
+    <Compile Include="Forms\Tool\DbManage\FilterEditorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SysForms\frmParityCode.Designer.cs">
-      <DependentUpon>frmParityCode.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\SysForms\LoginForms\FilterEditorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\SysForms\LoginForms\FilterEditorForm.Designer.cs">
+    <Compile Include="Forms\Tool\DbManage\FilterEditorForm.Designer.cs">
       <DependentUpon>FilterEditorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SysForms\LoginForms\frmLogin.cs">
@@ -475,22 +463,22 @@
     <Compile Include="Forms\SysForms\LoginForms\frmShortCut.Designer.cs">
       <DependentUpon>frmShortCut.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SysForms\LoginForms\frmSqlLogin.cs">
+    <Compile Include="Forms\Tool\DbManage\frmSqlLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SysForms\LoginForms\frmSqlLogin.Designer.cs">
+    <Compile Include="Forms\Tool\DbManage\frmSqlLogin.Designer.cs">
       <DependentUpon>frmSqlLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SysForms\LoginForms\frmSQLManagement.cs">
+    <Compile Include="Forms\Tool\DbManage\frmSQLManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SysForms\LoginForms\frmSQLManagement.Designer.cs">
+    <Compile Include="Forms\Tool\DbManage\frmSQLManagement.Designer.cs">
       <DependentUpon>frmSQLManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SysForms\LoginForms\QueryPropertiesDialog.cs">
+    <Compile Include="Forms\Tool\DbManage\QueryPropertiesDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SysForms\LoginForms\QueryPropertiesDialog.Designer.cs">
+    <Compile Include="Forms\Tool\DbManage\QueryPropertiesDialog.Designer.cs">
       <DependentUpon>QueryPropertiesDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SysForms\SysConfigForms\frmSystemConfigs.cs">
@@ -499,10 +487,10 @@
     <Compile Include="Forms\SysForms\SysConfigForms\frmSystemConfigs.Designer.cs">
       <DependentUpon>frmSystemConfigs.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SysRights\frmUserChangePassword.cs">
+    <Compile Include="Forms\SysForms\frmUserChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SysRights\frmUserChangePassword.Designer.cs">
+    <Compile Include="Forms\SysForms\frmUserChangePassword.Designer.cs">
       <DependentUpon>frmUserChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tool\frmLangChange.cs">
@@ -537,15 +525,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Controls\KillSumControl.resx">
-      <DependentUpon>KillSumControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\SystemControl\BaseSettingControl.resx">
       <DependentUpon>BaseSettingControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -609,31 +588,31 @@
     <EmbeddedResource Include="Forms\TestForms\Grid\frmDataGridViewColumns.resx">
       <DependentUpon>frmDataGridViewColumns.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Digiwin\frmDECode.resx">
+    <EmbeddedResource Include="Forms\E10\frmDECode.resx">
       <DependentUpon>frmDECode.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Digiwin\frmE10Main.resx">
+    <EmbeddedResource Include="Forms\E10\frmE10Main.resx">
       <DependentUpon>frmE10Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Digiwin\frmE10SearchMain.resx">
+    <EmbeddedResource Include="Forms\E10\frmE10SearchMain.resx">
       <DependentUpon>frmE10SearchMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Digiwin\frmHashCode.resx">
+    <EmbeddedResource Include="Forms\E10\frmHashCode.resx">
       <DependentUpon>frmHashCode.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Digiwin\FrmSetting.resx">
+    <EmbeddedResource Include="Forms\E10\FrmSetting.resx">
       <DependentUpon>FrmSetting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Digiwin\frmSQLFormat.resx">
+    <EmbeddedResource Include="Forms\Tool\frmSQLFormat.resx">
       <DependentUpon>frmSQLFormat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DocumentForms\frmHelpBrowser.resx">
+    <EmbeddedResource Include="Forms\Help\frmHelpBrowser.resx">
       <DependentUpon>frmHelpBrowser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DocumentForms\frmHelpMain.resx">
+    <EmbeddedResource Include="Forms\Help\frmHelpMain.resx">
       <DependentUpon>frmHelpMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form1.resx">
+    <EmbeddedResource Include="Forms\TestForms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Margin\frmSystemAddAuth.resx">
@@ -645,19 +624,16 @@
     <EmbeddedResource Include="Forms\SysForms\BaseSettingForm.resx">
       <DependentUpon>BaseSettingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SysForms\frmAboutForm.resx">
+    <EmbeddedResource Include="Forms\Help\frmAboutForm.resx">
       <DependentUpon>frmAboutForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SysForms\frmCheckUpdate.resx">
+    <EmbeddedResource Include="Forms\Help\frmCheckUpdate.resx">
       <DependentUpon>frmCheckUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SysForms\frmEditConfigFile.resx">
+    <EmbeddedResource Include="Forms\Tool\frmEditConfigFile.resx">
       <DependentUpon>frmEditConfigFile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SysForms\frmParityCode.resx">
-      <DependentUpon>frmParityCode.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SysForms\LoginForms\FilterEditorForm.resx">
+    <EmbeddedResource Include="Forms\Tool\DbManage\FilterEditorForm.resx">
       <DependentUpon>FilterEditorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SysForms\LoginForms\frmLogin.resx">
@@ -672,19 +648,19 @@
     <EmbeddedResource Include="Forms\SysForms\LoginForms\frmShortCut.resx">
       <DependentUpon>frmShortCut.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SysForms\LoginForms\frmSqlLogin.resx">
+    <EmbeddedResource Include="Forms\Tool\DbManage\frmSqlLogin.resx">
       <DependentUpon>frmSqlLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SysForms\LoginForms\frmSQLManagement.resx">
+    <EmbeddedResource Include="Forms\Tool\DbManage\frmSQLManagement.resx">
       <DependentUpon>frmSQLManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SysForms\LoginForms\QueryPropertiesDialog.resx">
+    <EmbeddedResource Include="Forms\Tool\DbManage\QueryPropertiesDialog.resx">
       <DependentUpon>QueryPropertiesDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SysForms\SysConfigForms\frmSystemConfigs.resx">
       <DependentUpon>frmSystemConfigs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SysRights\frmUserChangePassword.resx">
+    <EmbeddedResource Include="Forms\SysForms\frmUserChangePassword.resx">
       <DependentUpon>frmUserChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tool\frmLangChange.resx">
@@ -700,9 +676,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Test.resx">
-      <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <Content Include="7z.dll">
@@ -837,7 +810,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
-    <Folder Include="Forms\DataForms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

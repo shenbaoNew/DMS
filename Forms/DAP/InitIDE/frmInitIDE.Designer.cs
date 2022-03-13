@@ -26,6 +26,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInitIDE));
             this.expandablePanel1 = new DevComponents.DotNetBar.ExpandablePanel();
+            this.btnUpgrade = new DevComponents.DotNetBar.ButtonX();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSelectVersion = new DevComponents.DotNetBar.ButtonX();
             this.lblFirst = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@
             this.tsbRanInit = new System.Windows.Forms.ToolStripButton();
             this.tsbDapVersion = new System.Windows.Forms.ToolStripButton();
             this.tsbParameter = new System.Windows.Forms.ToolStripButton();
-            this.btnUpgrade = new DevComponents.DotNetBar.ButtonX();
             this.expandablePanel1.SuspendLayout();
             this.groupLog.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -116,7 +116,20 @@
             this.expandablePanel1.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.expandablePanel1.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.expandablePanel1.TitleStyle.GradientAngle = 90;
-            this.expandablePanel1.TitleText = "DAP环境初始化";
+            this.expandablePanel1.TitleText = "DAP环境搭建/更新";
+            // 
+            // btnUpgrade
+            // 
+            this.btnUpgrade.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnUpgrade.AutoExpandOnClick = true;
+            this.btnUpgrade.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnUpgrade.Location = new System.Drawing.Point(506, 407);
+            this.btnUpgrade.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.btnUpgrade.Name = "btnUpgrade";
+            this.btnUpgrade.Size = new System.Drawing.Size(243, 66);
+            this.btnUpgrade.TabIndex = 23;
+            this.btnUpgrade.Text = "环境升级";
+            this.btnUpgrade.Click += new System.EventHandler(this.btnUpgrade_Click);
             // 
             // label3
             // 
@@ -492,19 +505,6 @@
             this.tsbParameter.Size = new System.Drawing.Size(127, 39);
             this.tsbParameter.Text = "通用参数";
             this.tsbParameter.Click += new System.EventHandler(this.tsbParameter_Click);
-            // 
-            // btnUpgrade
-            // 
-            this.btnUpgrade.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnUpgrade.AutoExpandOnClick = true;
-            this.btnUpgrade.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnUpgrade.Location = new System.Drawing.Point(506, 407);
-            this.btnUpgrade.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.btnUpgrade.Name = "btnUpgrade";
-            this.btnUpgrade.Size = new System.Drawing.Size(243, 66);
-            this.btnUpgrade.TabIndex = 23;
-            this.btnUpgrade.Text = "环境升级";
-            this.btnUpgrade.Click += new System.EventHandler(this.btnUpgrade_Click);
             // 
             // frmInitIDE
             // 
