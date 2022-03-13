@@ -330,22 +330,22 @@
     <Compile Include="Forms\DAP\SelectWindow\frmSelectDapVersion.Designer.cs">
       <DependentUpon>frmSelectDapVersion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DataForms\frmCheckData.cs">
+    <Compile Include="Forms\TestForms\frmCheckData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DataForms\frmCheckData.Designer.cs">
+    <Compile Include="Forms\TestForms\frmCheckData.Designer.cs">
       <DependentUpon>frmCheckData.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DataForms\Grid\frmDataGrid.cs">
+    <Compile Include="Forms\TestForms\Grid\frmDataGrid.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DataForms\Grid\frmDataGrid.designer.cs">
+    <Compile Include="Forms\TestForms\Grid\frmDataGrid.designer.cs">
       <DependentUpon>frmDataGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DataForms\Grid\frmDataGridViewColumns.cs">
+    <Compile Include="Forms\TestForms\Grid\frmDataGridViewColumns.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DataForms\Grid\frmDataGridViewColumns.designer.cs">
+    <Compile Include="Forms\TestForms\Grid\frmDataGridViewColumns.designer.cs">
       <DependentUpon>frmDataGridViewColumns.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Digiwin\EncodeAndDecode.cs" />
@@ -505,24 +505,6 @@
     <Compile Include="Forms\SysRights\frmUserChangePassword.Designer.cs">
       <DependentUpon>frmUserChangePassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\TestForms\frmTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TestForms\frmTest.Designer.cs">
-      <DependentUpon>frmTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\TestForms\TestControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\TestForms\TestControl.Designer.cs">
-      <DependentUpon>TestControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\TestForms\TestDetailControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\TestForms\TestDetailControl.Designer.cs">
-      <DependentUpon>TestDetailControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Tool\frmLangChange.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -618,13 +600,13 @@
     <EmbeddedResource Include="Forms\DAP\SelectWindow\frmSelectDapVersion.resx">
       <DependentUpon>frmSelectDapVersion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DataForms\frmCheckData.resx">
+    <EmbeddedResource Include="Forms\TestForms\frmCheckData.resx">
       <DependentUpon>frmCheckData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DataForms\Grid\frmDataGrid.resx">
+    <EmbeddedResource Include="Forms\TestForms\Grid\frmDataGrid.resx">
       <DependentUpon>frmDataGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DataForms\Grid\frmDataGridViewColumns.resx">
+    <EmbeddedResource Include="Forms\TestForms\Grid\frmDataGridViewColumns.resx">
       <DependentUpon>frmDataGridViewColumns.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Digiwin\frmDECode.resx">
@@ -704,15 +686,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SysRights\frmUserChangePassword.resx">
       <DependentUpon>frmUserChangePassword.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TestForms\frmTest.resx">
-      <DependentUpon>frmTest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TestForms\TestControl.resx">
-      <DependentUpon>TestControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TestForms\TestDetailControl.resx">
-      <DependentUpon>TestDetailControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tool\frmLangChange.resx">
       <DependentUpon>frmLangChange.cs</DependentUpon>
@@ -864,6 +837,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
+    <Folder Include="Forms\DataForms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
