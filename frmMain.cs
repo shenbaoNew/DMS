@@ -598,11 +598,12 @@ namespace DMS
                 this.middlePanel.Items[this.middlePanel.Items.Count - 2].Text = " 欢迎 " + PubContext.logUser + "   登录时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
         }
 
-        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
-        {
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e) {
+            if (PubContext.Upgrade) {
+                return;
+            }
             string msg = "是否确定退出系统?";
-            if (ShowMessage.ShowQuestion(msg) == DialogResult.No)
-            {
+            if (ShowMessage.ShowQuestion(msg) == DialogResult.No) {
                 e.Cancel = true;
             }
         }

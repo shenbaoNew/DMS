@@ -28,7 +28,9 @@ namespace DMS.Forms
             if (needUpgrade) {
                 if(MessageBox.Show("检测到最新版本：" + newVersion + "，是否更新?", "请选择", MessageBoxButtons.OKCancel)
                     == DialogResult.OK) {
-
+                    PubContext.Upgrade = true;
+                    System.Diagnostics.Process.Start("DMSAutoUpdater.exe");
+                    Application.Exit();
                 }
             }
         }
@@ -36,11 +38,11 @@ namespace DMS.Forms
         public void DownLoadFile() {
             FtpHelper.DownLoadFileFromFtp("114.55.34.43", "dms", "123!@#shen", "/DMS_V1.0.1.47.zip"
                 , @"E:\temp\test\DMS_V1.0.1.47.zip");
-           
-            
+
+
         }
 
-       public string NewVersion() {
+        public string NewVersion() {
             try {
                 List<string> fileList = FtpHelper.GetFileListFromFtp("114.55.34.43", "dms", "123!@#shen", "/");
                 string maxFileName = fileList.Max();

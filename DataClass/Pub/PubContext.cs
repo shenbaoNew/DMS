@@ -106,6 +106,10 @@ namespace DMS
 
         #endregion
 
+        #region 系统更新
+        public static bool Upgrade { get; set; }
+        #endregion
+
         public static UserData CurrentUser { get; set; }
 
         public static string logUser;
