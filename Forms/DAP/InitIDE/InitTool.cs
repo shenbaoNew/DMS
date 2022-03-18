@@ -404,14 +404,14 @@ namespace DMS.Forms.DAP.InitIDE {
         /// <returns></returns>
         public List<string> GetPatchList(string version) {
             string path = GetPatchPath(version);
-            List<string> list = FtpHelper.GetFileListFromFTP(path);
+            List<string> list = FtpHelper.GetFileListFromFtp(path);
             list.Insert(0, version + ".1000");
             return list;
         }
 
         public List<string> GetVersionList() {
             string path = GetVersionPath();
-            List<string> list = FtpHelper.GetFileListFromFTP(path);
+            List<string> list = FtpHelper.GetFileListFromFtp(path);
             List<string> result = new List<string>();
             foreach(string content in list) {
                 string version = content.Substring(0, 5);
