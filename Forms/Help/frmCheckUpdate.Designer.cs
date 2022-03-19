@@ -83,7 +83,6 @@
             this.Controls.Add(this.tablPanel);
             this.Name = "frmCheckUpdate";
             this.Text = "frmCheckUpdate";
-            this.Load += new System.EventHandler(this.frmCheckUpdate_Load);
             this.tablPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
