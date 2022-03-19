@@ -14,10 +14,10 @@
     <!--Menu Code="040000" Parent="0" Order="4" FullName="" IsLeaf="0">Margin</Menu>
 	<Menu Code="040001" Parent="040000" Order="1" FullName="DMS.Margin.frmSystemAddAuth" IsLeaf="1">权限与加解密</Menu-->
     <Menu Code="040000" Parent="0" Order="4" FullName="" IsLeaf="0">DAP</Menu>
-    <Menu Code="040002" Parent="040000" Order="2" FullName="DMS.Forms.frmSyncDapMetadata" IsLeaf="1">同步DAP元数据表</Menu>
-    <Menu Code="040003" Parent="040000" Order="3" FullName="DMS.Forms.frmCrossKey" IsLeaf="1">Crosskey</Menu>
+    <Menu Code="040001" Parent="040000" Order="1" FullName="DMS.Forms.frmSyncDapMetadata" IsLeaf="1">DAP元数据同步</Menu>
+    <Menu Code="040002" Parent="040000" Order="2" FullName="DMS.Forms.frmInitIDE" IsLeaf="1">DAP环境搭建/更新</Menu>
+    <Menu Code="040003" Parent="040000" Order="3" FullName="DMS.Forms.frmCrossKey" IsLeaf="1">ESP-Crosskey</Menu>
     <Menu Code="040004" Parent="040000" Order="4" FullName="DMS.Forms.frmSendRequest" IsLeaf="1">ESP请求</Menu>
-    <Menu Code="040005" Parent="040000" Order="5" FullName="DMS.Forms.frmInitIDE" IsLeaf="1">DAP环境搭建/更新</Menu>
     <Menu Code="160000" Parent="0" Order="16" FullName="" IsLeaf="0">系统管理</Menu>
     <Menu Code="160100" Parent="160000" Order="1" FullName="DMS.Forms.frmSystemConfigs" IsLeaf="1">系统设置</Menu>
     <Menu Code="160200" Parent="160000" Order="2" FullName="DMS.Forms.frmUserChangePassword" IsLeaf="1">修改密码</Menu>
@@ -78,9 +78,9 @@
   </DataBase>
   <DAP>
     <Init>
-      <ProjectPath>E:\temp\code2\mkp_backend</ProjectPath>
+      <ProjectPath>E:\temp\code\bm-dcsc_backend</ProjectPath>
       <JdkPath>D:\work\devtool\java-1.8.0-openjdk-1.8.0.191</JdkPath>
-      <Version>4.0.1.1006</Version>
+      <Version>4.0.1.1010</Version>
     </Init>
   </DAP>
 </DMS>
