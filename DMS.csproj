@@ -224,43 +224,43 @@
     <Compile Include="Controls\TopPanelControl.Designer.cs">
       <DependentUpon>TopPanelControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataClass\DataBase\LocalDataBase.cs" />
-    <Compile Include="DataClass\DataBase\RemoteDataBase.cs" />
-    <Compile Include="DataClass\DataBase\Sap\SapRfcBase.cs" />
-    <Compile Include="DataClass\DataBase\Sap\SapRfcHelper.cs" />
-    <Compile Include="DataClass\DataMonitor\DataMonitorData.cs" />
-    <Compile Include="DataClass\Digiwin\DataClass.cs" />
-    <Compile Include="DataClass\Digiwin\DigiwinHelper.cs" />
-    <Compile Include="DataClass\MMSData\MMSData.cs" />
-    <Compile Include="DataClass\PubData\PlantInfoData.cs" />
-    <Compile Include="DataClass\Pub\CommonHelper.cs" />
-    <Compile Include="DataClass\Pub\ConstHelper.cs" />
-    <Compile Include="DataClass\Pub\DataBinds.cs" />
-    <Compile Include="DataClass\Pub\FtpHelper.cs" />
-    <Compile Include="DataClass\Pub\Functions.cs" />
-    <Compile Include="DataClass\Pub\Menu.cs" />
-    <Compile Include="DataClass\Pub\PubEnum.cs" />
-    <Compile Include="DataClass\Pub\PubEventHandler.cs" />
-    <Compile Include="DataClass\Pub\PubContext.cs" />
-    <Compile Include="DataClass\DataBase\SQLHelper.cs" />
-    <Compile Include="DataClass\Pub\PubHelper.cs" />
-    <Compile Include="DataClass\Pub\PubHttp.cs" />
-    <Compile Include="DataClass\Pub\ShowMessage.cs" />
-    <Compile Include="DataClass\Pub\XmlHelper.cs" />
-    <Compile Include="DataClass\Security\Security.cs" />
-    <Compile Include="DataClass\Systems\ImageList.cs" />
-    <Compile Include="DataClass\Systems\SQLServer\PrograssManager.cs" />
-    <Compile Include="DataClass\Systems\SQLServer\SqlConnectionManager.cs" />
-    <Compile Include="DataClass\Systems\SQLServer\CreateHistoryData.cs" />
-    <Compile Include="DataClass\Systems\SQLServer\OleDbConnString.cs" />
-    <Compile Include="DataClass\Systems\SQLServer\OleDbSchema.cs">
+    <Compile Include="DataModel\DataBase\LocalDataBase.cs" />
+    <Compile Include="DataModel\DataBase\RemoteDataBase.cs" />
+    <Compile Include="DataModel\DataBase\Sap\SapRfcBase.cs" />
+    <Compile Include="DataModel\DataBase\Sap\SapRfcHelper.cs" />
+    <Compile Include="DataModel\DataMonitor\DataMonitorData.cs" />
+    <Compile Include="DataModel\Digiwin\DataClass.cs" />
+    <Compile Include="DataModel\Digiwin\DigiwinHelper.cs" />
+    <Compile Include="DataModel\MMSData\MMSData.cs" />
+    <Compile Include="DataModel\PubData\PlantInfoData.cs" />
+    <Compile Include="DataModel\Pub\CommonHelper.cs" />
+    <Compile Include="DataModel\Pub\ConstHelper.cs" />
+    <Compile Include="DataModel\Pub\DataBinds.cs" />
+    <Compile Include="DataModel\Pub\FtpHelper.cs" />
+    <Compile Include="DataModel\Pub\Functions.cs" />
+    <Compile Include="DataModel\Pub\Menu.cs" />
+    <Compile Include="DataModel\Pub\PubEnum.cs" />
+    <Compile Include="DataModel\Pub\PubEventHandler.cs" />
+    <Compile Include="DataModel\Pub\PubContext.cs" />
+    <Compile Include="DataModel\DataBase\SQLHelper.cs" />
+    <Compile Include="DataModel\Pub\PubHelper.cs" />
+    <Compile Include="DataModel\Pub\PubHttp.cs" />
+    <Compile Include="DataModel\Pub\ShowMessage.cs" />
+    <Compile Include="DataModel\Pub\XmlHelper.cs" />
+    <Compile Include="DataModel\Security\Security.cs" />
+    <Compile Include="DataModel\Systems\ImageList.cs" />
+    <Compile Include="DataModel\Systems\SQLServer\PrograssManager.cs" />
+    <Compile Include="DataModel\Systems\SQLServer\SqlConnectionManager.cs" />
+    <Compile Include="DataModel\Systems\SQLServer\CreateHistoryData.cs" />
+    <Compile Include="DataModel\Systems\SQLServer\OleDbConnString.cs" />
+    <Compile Include="DataModel\Systems\SQLServer\OleDbSchema.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DataClass\Systems\SQLServer\QueryBuilder.cs" />
-    <Compile Include="DataClass\Systems\SQLServer\QueryField.cs" />
-    <Compile Include="DataClass\Systems\SQLServer\SQLManageData.cs" />
-    <Compile Include="DataClass\Systems\SystemManager.cs" />
-    <Compile Include="DataClass\Systems\User\UserData.cs" />
+    <Compile Include="DataModel\Systems\SQLServer\QueryBuilder.cs" />
+    <Compile Include="DataModel\Systems\SQLServer\QueryField.cs" />
+    <Compile Include="DataModel\Systems\SQLServer\SQLManageData.cs" />
+    <Compile Include="DataModel\Systems\SystemManager.cs" />
+    <Compile Include="DataModel\Systems\User\UserData.cs" />
     <Compile Include="Forms\BaseForms\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -518,7 +518,7 @@
     <Compile Include="Forms\Margin\frmSystemAddAuth.Designer.cs">
       <DependentUpon>frmSystemAddAuth.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataClass\Helper\MySQLHelper.cs" />
+    <Compile Include="DataModel\Helper\MySQLHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -718,7 +718,6 @@
   <ItemGroup>
     <Content Include="logonew.ico" />
     <Content Include="menu.xml" />
-    <Content Include="plant.xml" />
     <Content Include="logo.ico" />
     <Content Include="recent.xml" />
     <Content Include="Reference\DevComponents.DotNetBar.dll" />
@@ -788,16 +787,6 @@
       <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
-    <PublishFile Include="plant.xml">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>File</FileType>
-    </PublishFile>
     <PublishFile Include="recent.xml">
       <Visible>False</Visible>
       <Group>
@@ -809,9 +798,7 @@
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Debug\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
