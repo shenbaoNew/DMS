@@ -1,18 +1,15 @@
-﻿using System;
+﻿using DMS.DataClass.Pub;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Deployment.Application;
-using DMS.DataClass.Pub;
-using System.Reflection;
 using System.Diagnostics;
+using System.Linq;
+using System.Reflection;
+using System.Windows.Forms;
 
 namespace DMS.Forms {
     public partial class frmCheckUpdate : BaseForm {
+        bool needUpgrade = false;
+        string newVersion = "";
         public frmCheckUpdate() {
             InitializeComponent();
             Upgrade();
@@ -20,16 +17,24 @@ namespace DMS.Forms {
 
         public void Upgrade() {
             string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            string newVersion = NewVersion();
-            bool needUpgrade = newVersion.CompareTo(version) > 0;
+            newVersion = NewVersion();
+            needUpgrade = newVersion.CompareTo(version) > 0;
             if (needUpgrade) {
                 if (MessageBox.Show("检测到最新版本：" + newVersion + "，是否更新?", "请选择", MessageBoxButtons.OKCancel)
                     == DialogResult.OK) {
                     this.StartUpgradeProgram(newVersion);
-                } else {
-                    MessageBox.Show("当前是最新版本，无需更新...");
                 }
+            } else {
+                MessageBox.Show("当前是最新版本，无需更新...");
             }
+        }
+
+        private void SetVersionText(bool needUpgrade) {
+            this.lblVersion.Text = Assembly.GetExecutingAssembly().GetName().Version.ToString()
+                + (needUpgrade ? "" : "（最新）");
+            this.lblNewVersion.Text = newVersion;
+            this.lblNew.Visible = needUpgrade;
+            this.lblNewVersion.Visible = needUpgrade;
         }
 
         private void StartUpgradeProgram(string version) {
@@ -49,13 +54,21 @@ namespace DMS.Forms {
 
         public string NewVersion() {
             try {
-                List<string> fileList = FtpHelper.GetFileListFromFtp("114.55.34.43", "dms", "123!@#shen", "/");
+                List<string> fileList = FtpHelper.GetFileListFromFtp(PubContext.DmsFtpServer, PubContext.DmsFtpUser, PubContext.DmsFtpPwd, "/");
                 string maxFileName = fileList.Max();
                 return maxFileName.Substring(maxFileName.IndexOf("_") + 1).TrimEnd(".zip".ToCharArray());
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             }
             return "";
+        }
+
+        private void frmCheckUpdate_Load(object sender, EventArgs e) {
+            this.SetVersionText(needUpgrade);
+        }
+
+        private void tsbUpgrade_Click(object sender, EventArgs e) {
+            this.Upgrade();
         }
     }
 }

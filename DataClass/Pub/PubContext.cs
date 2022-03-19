@@ -108,6 +108,9 @@ namespace DMS
 
         #region 系统更新
         public static bool Upgrade { get; set; }
+        public static string DmsFtpUser = "dms";
+        public static string DmsFtpPwd = "123!@#shen";
+        public static string DmsFtpServer = "114.55.34.43";
         #endregion
 
         public static UserData CurrentUser { get; set; }
