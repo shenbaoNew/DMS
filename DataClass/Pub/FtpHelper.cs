@@ -101,7 +101,8 @@ namespace DMS.DataClass.Pub {
                 reader = new StreamReader(response.GetResponseStream());
                 string line = reader.ReadLine();
                 while (line != null) {
-                    if (!line.Contains("<DIR>")) {
+                    if (!line.Contains("<DIR>")
+                         && line.StartsWith("DMS_")) {
                         list.Add(line);
                     }
                     line = reader.ReadLine();
