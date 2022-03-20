@@ -73,8 +73,12 @@ namespace DMS.Forms {
         }
 
         private void tsbViewLog_Click(object sender, EventArgs e) {
-            string logName = Path.Combine(Environment.CurrentDirectory, "DMS.log");
-            //Process.Start("NOTEPAD.exe", logName);
+            try {
+                string logName = Path.Combine(Environment.CurrentDirectory, "DMS.log");
+                Process.Start("NOTEPAD.exe", logName);
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
