@@ -111,6 +111,7 @@ namespace DMS
         public static string DmsFtpUser = "dms";
         public static string DmsFtpPwd = "123!@#shen";
         public static string DmsFtpServer = "114.55.34.43";
+        public static string UpgradeDirectoryName = "DMSBak";
         #endregion
 
         public static UserData CurrentUser { get; set; }

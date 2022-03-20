@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
@@ -69,6 +70,11 @@ namespace DMS.Forms {
 
         private void tsbUpgrade_Click(object sender, EventArgs e) {
             this.Upgrade();
+        }
+
+        private void tsbViewLog_Click(object sender, EventArgs e) {
+            string logName = Path.Combine(Environment.CurrentDirectory, "DMS.log");
+            //Process.Start("NOTEPAD.exe", logName);
         }
     }
 }
