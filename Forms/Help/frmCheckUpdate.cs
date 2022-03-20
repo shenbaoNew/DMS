@@ -25,7 +25,7 @@ namespace DMS.Forms {
                     this.StartUpgradeProgram(newVersion);
                 }
             } else {
-                MessageBox.Show("当前是最新版本，无需更新...");
+                MessageBox.Show("当前程序已是最新版本，无需更新...");
             }
         }
 
