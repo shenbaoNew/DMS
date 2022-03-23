@@ -317,7 +317,7 @@ namespace DMS.Forms.DAP.InitIDE {
 
         public void AppendAppCenterConfig() {
             if (this.first) {
-                this.AppendText("配置修改module\\pom.xml(nexus地址配置,appcenter默认版本配置)...");
+                this.AppendText("配置修改module\\pom.xml(nexus地址配置,公共组件默认版本配置)...");
                 this.AppendAppCenterNode(Path.Combine(projectPath, "develop\\module\\pom.xml"));
                 this.AppendAppCenterNode(Path.Combine(projectPath, "develop\\DWThirdPartyLibrary\\pom.xml"));
             }
@@ -341,7 +341,7 @@ namespace DMS.Forms.DAP.InitIDE {
                     properties.AppendChild(nexusIp);
                 }
                 XmlNode appVersioin = xml.CreateElement("appcenter.version", nsUrl);
-                appVersioin.InnerText = this.version + ".32";
+                appVersioin.InnerText = this.version + ".35";
                 properties.AppendChild(appVersioin);
 
                 //追加repository
@@ -368,14 +368,25 @@ namespace DMS.Forms.DAP.InitIDE {
                 XmlNode dependency = xml.CreateElement("dependency", nsUrl);
                 dependencies.AppendChild(dependency);
                 //添加groupId，artifactId，version
+                //原有的appcenter配置
+                //XmlNode groupId = xml.CreateElement("groupId", nsUrl);
+                //groupId.InnerText = "com.digiwin.appcenter";
+                //dependency.AppendChild(groupId);
+                //XmlNode artifactId = xml.CreateElement("artifactId", nsUrl);
+                //artifactId.InnerText = "appcenter-common";
+                //dependency.AppendChild(artifactId);
+                //XmlNode version = xml.CreateElement("version", nsUrl);
+                //version.InnerText = "${appcenter.version}";
+                //dependency.AppendChild(version);
+                //现有的业务中台配置
                 XmlNode groupId = xml.CreateElement("groupId", nsUrl);
-                groupId.InnerText = "com.digiwin.appcenter";
+                groupId.InnerText = "com.digiwin.bm";
                 dependency.AppendChild(groupId);
                 XmlNode artifactId = xml.CreateElement("artifactId", nsUrl);
-                artifactId.InnerText = "appcenter-common";
+                artifactId.InnerText = "bm-spring-boot-starter";
                 dependency.AppendChild(artifactId);
                 XmlNode version = xml.CreateElement("version", nsUrl);
-                version.InnerText = "${appcenter.version}";
+                version.InnerText = "${bm.version}";
                 dependency.AppendChild(version);
 
                 xml.Save(pomPath);
