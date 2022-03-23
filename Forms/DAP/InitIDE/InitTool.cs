@@ -340,7 +340,7 @@ namespace DMS.Forms.DAP.InitIDE {
                     nexusIp.InnerText = "https://repo.digiwincloud.com.cn/maven";
                     properties.AppendChild(nexusIp);
                 }
-                XmlNode appVersioin = xml.CreateElement("appcenter.version", nsUrl);
+                XmlNode appVersioin = xml.CreateElement("bm.version", nsUrl);
                 appVersioin.InnerText = this.version + ".35";
                 properties.AppendChild(appVersioin);
 
