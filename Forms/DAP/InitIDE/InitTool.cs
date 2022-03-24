@@ -38,9 +38,7 @@ namespace DMS.Forms.DAP.InitIDE {
 
         private void ChangeProjectFolderName() {
             DirectoryInfo info = new DirectoryInfo(this.projectPath);
-            if (info.Exists) {
-                InitParameter.NEW_DAP_RUN_PACKAGE_NAME = info.Name;
-            }
+            InitParameter.NEW_DAP_RUN_PACKAGE_NAME = info.Name;
         }
 
         public void InitDapRunEnvironment() {
