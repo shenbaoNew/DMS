@@ -22,6 +22,7 @@ namespace DMS.Forms {
             needUpgrade = newVersion.CompareTo(version) > 0;
             if (needUpgrade) {
                 PubContext.NewVesion = newVersion;
+                this.SetVersionText(needUpgrade);
                 if (MessageBox.Show("检测到最新版本：" + newVersion + "，是否更新?", "请选择", MessageBoxButtons.OKCancel)
                     == DialogResult.OK) {
                     CommonHelper.StartUpgradeProgram(newVersion);
