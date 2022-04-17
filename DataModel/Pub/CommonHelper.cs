@@ -1,11 +1,14 @@
 ﻿using SevenZip;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
+using System.Windows.Forms;
 
 namespace DMS.DataClass.Pub {
     class CommonHelper {
@@ -86,6 +89,34 @@ namespace DMS.DataClass.Pub {
                 content = sr.ReadToEnd();
             }
             return content;
+        }
+
+        public static string NewVersion() {
+            try {
+                string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                List<string> fileList = FtpHelper.GetFileListFromFtp(PubContext.DmsFtpServer, PubContext.DmsFtpUser, PubContext.DmsFtpPwd, "/");
+                string maxFileName = fileList.Max();
+                string newVersion = maxFileName.Substring(maxFileName.IndexOf("_") + 1).TrimEnd(".zip".ToCharArray());
+                return newVersion.CompareTo(version) > 0 ? newVersion : "";
+            } catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+            }
+            return "";
+        }
+
+        public static void StartUpgradeProgram(string version) {
+            try {
+                PubContext.Upgrade = true;
+                ProcessStartInfo startInfo = new ProcessStartInfo();
+                startInfo.FileName = "DMSAutoUpdater.exe";
+                startInfo.Arguments = version;
+                startInfo.WindowStyle = ProcessWindowStyle.Normal;
+                Process.Start(startInfo);
+                Application.Exit();
+            } catch (Exception ex) {
+                PubContext.Upgrade = false;
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

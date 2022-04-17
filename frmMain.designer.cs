@@ -30,8 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.dockPanel = new DevComponents.DotNetBar.DockPanel();
-            this.bar1 = new DevComponents.DotNetBar.Bar();
-            ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
+            this.barStatus = new DevComponents.DotNetBar.Bar();
+            this.lblNewVesion = new DevComponents.DotNetBar.LabelItem();
+            ((System.ComponentModel.ISupportInitialize)(this.barStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // dockPanel
@@ -42,32 +43,41 @@
             this.dockPanel.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
             this.dockPanel.Location = new System.Drawing.Point(0, 0);
             this.dockPanel.Name = "dockPanel";
-            this.dockPanel.Size = new System.Drawing.Size(697, 366);
+            this.dockPanel.Size = new System.Drawing.Size(697, 348);
             this.dockPanel.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.dockPanel.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.dockPanel.TabIndex = 0;
             // 
-            // bar1
+            // barStatus
             // 
-            this.bar1.AntiAlias = true;
-            this.bar1.BarType = DevComponents.DotNetBar.eBarType.StatusBar;
-            this.bar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bar1.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.bar1.Location = new System.Drawing.Point(0, 366);
-            this.bar1.Name = "bar1";
-            this.bar1.Size = new System.Drawing.Size(697, 26);
-            this.bar1.Stretch = true;
-            this.bar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.bar1.TabIndex = 2;
-            this.bar1.TabStop = false;
-            this.bar1.Text = "bar1";
+            this.barStatus.AntiAlias = true;
+            this.barStatus.BarType = DevComponents.DotNetBar.eBarType.StatusBar;
+            this.barStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barStatus.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.barStatus.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.lblNewVesion});
+            this.barStatus.Location = new System.Drawing.Point(0, 348);
+            this.barStatus.Name = "barStatus";
+            this.barStatus.Size = new System.Drawing.Size(697, 44);
+            this.barStatus.Stretch = true;
+            this.barStatus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.barStatus.TabIndex = 2;
+            this.barStatus.TabStop = false;
+            this.barStatus.Text = "bar1";
+            // 
+            // lblNewVesion
+            // 
+            this.lblNewVesion.ForeColor = System.Drawing.Color.Red;
+            this.lblNewVesion.Name = "lblNewVesion";
+            this.lblNewVesion.Text = "新版本";
             // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.ClientSize = new System.Drawing.Size(697, 392);
             this.Controls.Add(this.dockPanel);
-            this.Controls.Add(this.bar1);
+            this.Controls.Add(this.barStatus);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "frmMain";
@@ -75,7 +85,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barStatus)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -83,8 +93,8 @@
         #endregion
 
         private DevComponents.DotNetBar.DockPanel dockPanel;
-        private DevComponents.DotNetBar.Bar bar1;
-
+        private DevComponents.DotNetBar.Bar barStatus;
+        private DevComponents.DotNetBar.LabelItem lblNewVesion;
     }
 }
 

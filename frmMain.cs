@@ -43,6 +43,7 @@ namespace DMS
             SetDockPanelStyle();
             PubContext.formMain = this;
             user = new UserData();
+            PubContext.NewVesionEvent += new EventHandler(this.ShowNewVerison);
 
             InitMainType();
         }
@@ -244,6 +245,12 @@ namespace DMS
                 CreateTopPanel();
                 ShowShortCut(PubContext.Menus, PubContext.Menus);
             }
+            this.ShowNewVerison(null, null);
+        }
+
+        public void ShowNewVerison(object sender, EventArgs e) {
+            this.lblNewVesion.Visible = !string.IsNullOrEmpty(PubContext.NewVesion);
+            this.lblNewVesion.Text = "系统检测到新版本：" + PubContext.NewVesion + "，请及时更新...";
         }
 
         private void FillTree()

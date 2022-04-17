@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Reflection;
 using DMS.DataClass.Systems.User;
 using System.Deployment.Application;
+using DMS.DataClass.Pub;
 
 namespace DMS.Forms
 {
@@ -42,22 +43,23 @@ namespace DMS.Forms
                 null, control, new object[] { true });
         }
 
-        private void IinitMassages()
-        {
+        private void IinitMassages() {
             SplashClass.Status = "加载相关数据和组件...";
             SystemManager.InitPubData();
             System.Threading.Thread.Sleep(1000);
             SplashClass.Status = "检查DMS与服务器的连通性...";
             CheckInitData();
             System.Threading.Thread.Sleep(1000);
+            SplashClass.Status = "检查是否有新的版本...";
+            PubContext.NewVesion = CommonHelper.NewVersion();
+            this.lblNewVersion.Text = "V" + PubContext.NewVesion + "（新）";
+            this.lblNewVersion.Visible = !string.IsNullOrEmpty(PubContext.NewVesion);
+            System.Threading.Thread.Sleep(1000);
             SplashClass.Status = "友情提醒：相关数据和组件加载完成！";
             System.Threading.Thread.Sleep(1000);
-            try
-            {
+            try {
                 SplashClass.Close();
-            }
-            catch
-            {
+            } catch {
 
             }
         }
@@ -159,8 +161,8 @@ namespace DMS.Forms
             // Ask the user if they would like to update the application now.
             if (e.UpdateAvailable)
             {
-                this.lblVersonInfo.Visible = true;
-                this.btnUpdate.Visible = true;
+                //this.lblVersonInfo.Visible = true;
+                //this.btnUpdate.Visible = true;
             }
             else
                 this.ProgressStatus.Visible = false;
@@ -216,6 +218,12 @@ namespace DMS.Forms
             if (DialogResult.OK == dr)
             {
                 Application.Restart();
+            }
+        }
+
+        private void lblNewVersion_Click(object sender, EventArgs e) {
+            if (MessageBox.Show("确定要升级吗？", "系统升级", MessageBoxButtons.OKCancel) == DialogResult.OK) {
+                CommonHelper.StartUpgradeProgram(PubContext.NewVesion);
             }
         }
 

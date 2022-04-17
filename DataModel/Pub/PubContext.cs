@@ -112,6 +112,15 @@ namespace DMS
         public static string DmsFtpPwd = "123!@#shen";
         public static string DmsFtpServer = "114.55.34.43";
         public static string UpgradeDirectoryName = "DMSBak";
+        public static event EventHandler NewVesionEvent;
+        private static string _newVesion = "";
+        public static string NewVesion {
+            get { return _newVesion; }
+            set {
+                _newVesion = value;
+                NewVesionEvent?.Invoke(null, EventArgs.Empty);
+            }
+        }
         #endregion
 
         public static UserData CurrentUser { get; set; }

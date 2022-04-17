@@ -21,11 +21,13 @@ namespace DMS.Forms {
             newVersion = NewVersion();
             needUpgrade = newVersion.CompareTo(version) > 0;
             if (needUpgrade) {
+                PubContext.NewVesion = newVersion;
                 if (MessageBox.Show("检测到最新版本：" + newVersion + "，是否更新?", "请选择", MessageBoxButtons.OKCancel)
                     == DialogResult.OK) {
-                    this.StartUpgradeProgram(newVersion);
+                    CommonHelper.StartUpgradeProgram(newVersion);
                 }
             } else {
+                PubContext.NewVesion = string.Empty;
                 MessageBox.Show("当前程序已是最新版本，无需更新...");
             }
         }
@@ -37,21 +39,7 @@ namespace DMS.Forms {
             this.lblNew.Visible = needUpgrade;
             this.lblNewVersion.Visible = needUpgrade;
         }
-
-        private void StartUpgradeProgram(string version) {
-            try {
-                PubContext.Upgrade = true;
-                ProcessStartInfo startInfo = new ProcessStartInfo();
-                startInfo.FileName = "DMSAutoUpdater.exe";
-                startInfo.Arguments = version;
-                startInfo.WindowStyle = ProcessWindowStyle.Normal;
-                Process.Start(startInfo);
-                Application.Exit();
-            } catch (Exception ex) {
-                PubContext.Upgrade = false;
-                MessageBox.Show(ex.Message);
-            }
-        }
+        
 
         public string NewVersion() {
             try {
