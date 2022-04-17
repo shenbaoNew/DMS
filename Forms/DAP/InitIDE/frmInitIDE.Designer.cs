@@ -50,9 +50,9 @@
             this.cb312_1022 = new DevComponents.Editors.ComboItem();
             this.cb401_1006 = new DevComponents.Editors.ComboItem();
             this.chk401 = new System.Windows.Forms.CheckBox();
-            this.chk311 = new System.Windows.Forms.CheckBox();
+            this.chk501 = new System.Windows.Forms.CheckBox();
             this.chk312 = new System.Windows.Forms.CheckBox();
-            this.chk301 = new System.Windows.Forms.CheckBox();
+            this.chk410 = new System.Windows.Forms.CheckBox();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.btnSelect = new DevComponents.DotNetBar.ButtonX();
             this.btnOpenPath = new DevComponents.DotNetBar.ButtonItem();
@@ -88,9 +88,9 @@
             this.expandablePanel1.Controls.Add(this.btnStartInit);
             this.expandablePanel1.Controls.Add(this.cmbVersion);
             this.expandablePanel1.Controls.Add(this.chk401);
-            this.expandablePanel1.Controls.Add(this.chk311);
+            this.expandablePanel1.Controls.Add(this.chk501);
             this.expandablePanel1.Controls.Add(this.chk312);
-            this.expandablePanel1.Controls.Add(this.chk301);
+            this.expandablePanel1.Controls.Add(this.chk410);
             this.expandablePanel1.Controls.Add(this.txtPath);
             this.expandablePanel1.Controls.Add(this.btnSelect);
             this.expandablePanel1.Controls.Add(this.label6);
@@ -100,7 +100,7 @@
             this.expandablePanel1.Location = new System.Drawing.Point(0, 42);
             this.expandablePanel1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.expandablePanel1.Name = "expandablePanel1";
-            this.expandablePanel1.Size = new System.Drawing.Size(1850, 1096);
+            this.expandablePanel1.Size = new System.Drawing.Size(1971, 1096);
             this.expandablePanel1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.expandablePanel1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.expandablePanel1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -373,7 +373,7 @@
             // chk401
             // 
             this.chk401.AutoSize = true;
-            this.chk401.Location = new System.Drawing.Point(1673, 285);
+            this.chk401.Location = new System.Drawing.Point(1403, 285);
             this.chk401.Name = "chk401";
             this.chk401.Size = new System.Drawing.Size(101, 33);
             this.chk401.TabIndex = 6;
@@ -381,21 +381,21 @@
             this.chk401.UseVisualStyleBackColor = true;
             this.chk401.CheckedChanged += new System.EventHandler(this.chk401_CheckedChanged);
             // 
-            // chk311
+            // chk501
             // 
-            this.chk311.AutoSize = true;
-            this.chk311.Location = new System.Drawing.Point(1401, 285);
-            this.chk311.Name = "chk311";
-            this.chk311.Size = new System.Drawing.Size(101, 33);
-            this.chk311.TabIndex = 5;
-            this.chk311.Text = "3.1.1";
-            this.chk311.UseVisualStyleBackColor = true;
-            this.chk311.CheckedChanged += new System.EventHandler(this.chk311_CheckedChanged);
+            this.chk501.AutoSize = true;
+            this.chk501.Location = new System.Drawing.Point(1679, 285);
+            this.chk501.Name = "chk501";
+            this.chk501.Size = new System.Drawing.Size(101, 33);
+            this.chk501.TabIndex = 5;
+            this.chk501.Text = "5.0.1";
+            this.chk501.UseVisualStyleBackColor = true;
+            this.chk501.CheckedChanged += new System.EventHandler(this.chk311_CheckedChanged);
             // 
             // chk312
             // 
             this.chk312.AutoSize = true;
-            this.chk312.Location = new System.Drawing.Point(1532, 285);
+            this.chk312.Location = new System.Drawing.Point(1262, 285);
             this.chk312.Name = "chk312";
             this.chk312.Size = new System.Drawing.Size(101, 33);
             this.chk312.TabIndex = 4;
@@ -403,16 +403,16 @@
             this.chk312.UseVisualStyleBackColor = true;
             this.chk312.CheckedChanged += new System.EventHandler(this.chk312_CheckedChanged);
             // 
-            // chk301
+            // chk410
             // 
-            this.chk301.AutoSize = true;
-            this.chk301.Location = new System.Drawing.Point(1266, 285);
-            this.chk301.Name = "chk301";
-            this.chk301.Size = new System.Drawing.Size(101, 33);
-            this.chk301.TabIndex = 3;
-            this.chk301.Text = "3.0.1";
-            this.chk301.UseVisualStyleBackColor = true;
-            this.chk301.CheckedChanged += new System.EventHandler(this.chk301_CheckedChanged);
+            this.chk410.AutoSize = true;
+            this.chk410.Location = new System.Drawing.Point(1544, 285);
+            this.chk410.Name = "chk410";
+            this.chk410.Size = new System.Drawing.Size(101, 33);
+            this.chk410.TabIndex = 3;
+            this.chk410.Text = "4.1.0";
+            this.chk410.UseVisualStyleBackColor = true;
+            this.chk410.CheckedChanged += new System.EventHandler(this.chk301_CheckedChanged);
             // 
             // txtPath
             // 
@@ -484,7 +484,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(1850, 42);
+            this.toolStrip1.Size = new System.Drawing.Size(1971, 42);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -522,7 +522,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1850, 1136);
+            this.ClientSize = new System.Drawing.Size(1971, 1136);
             this.Controls.Add(this.expandablePanel1);
             this.Controls.Add(this.toolStrip1);
             this.DoubleBuffered = true;
@@ -552,9 +552,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox chk401;
-        private System.Windows.Forms.CheckBox chk311;
+        private System.Windows.Forms.CheckBox chk501;
         private System.Windows.Forms.CheckBox chk312;
-        private System.Windows.Forms.CheckBox chk301;
+        private System.Windows.Forms.CheckBox chk410;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cmbVersion;
         private DevComponents.Editors.ComboItem cb301_1010;
         private DevComponents.Editors.ComboItem cb311_1011;

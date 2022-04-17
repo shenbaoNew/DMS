@@ -32,43 +32,43 @@ namespace DMS.Forms {
         }
 
         private void chk301_CheckedChanged(object sender, EventArgs e) {
-            if (chk301.Checked) {
-                chk311.Checked = false;
+            if (chk410.Checked) {
+                chk501.Checked = false;
                 chk312.Checked = false;
                 chk401.Checked = false;
 
-                cmbVersion.Text = "3.0.1.";
+                cmbVersion.Text = "4.1.0.1000";
             }
         }
 
         private void chk311_CheckedChanged(object sender, EventArgs e) {
-            if (chk311.Checked) {
-                chk301.Checked = false;
+            if (chk501.Checked) {
+                chk410.Checked = false;
                 chk312.Checked = false;
                 chk401.Checked = false;
 
-                cmbVersion.Text = "3.1.1.";
+                cmbVersion.Text = "5.0.1.1000";
             }
         }
 
         private void chk312_CheckedChanged(object sender, EventArgs e) {
 
             if (chk312.Checked) {
-                chk301.Checked = false;
-                chk311.Checked = false;
+                chk410.Checked = false;
+                chk501.Checked = false;
                 chk401.Checked = false;
 
-                cmbVersion.Text = "3.1.2.";
+                cmbVersion.Text = "3.1.2.1000";
             }
         }
 
         private void chk401_CheckedChanged(object sender, EventArgs e) {
             if (chk401.Checked) {
-                chk301.Checked = false;
-                chk311.Checked = false;
+                chk410.Checked = false;
+                chk501.Checked = false;
                 chk312.Checked = false;
 
-                cmbVersion.Text = "4.0.1.";
+                cmbVersion.Text = "4.0.1.1000";
             }
         }
 
