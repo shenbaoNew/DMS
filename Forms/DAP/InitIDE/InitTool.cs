@@ -20,7 +20,7 @@ namespace DMS.Forms.DAP.InitIDE {
         private string jdkPath;
         private bool first;
 
-        public InitTool(RichTextBoxEx log, string projectPath, string version, string patch,string jdk,bool first) {
+        public InitTool(RichTextBoxEx log, string projectPath, string version, string patch, string jdk, bool first) {
             this.log = log;
             this.projectPath = projectPath;
             this.developPath = projectPath + "\\develop";
@@ -45,7 +45,7 @@ namespace DMS.Forms.DAP.InitIDE {
             this.ClearTempPath();
             bool success = this.DownloadDapRunPackageFromFTP();
             success = success && this.UnZipDapPackage(UnZipDapPackageCallBackOnInit);
-           
+
             //this.InstallDWThirdPartyProject();
             //this.InstallRunningPackage();
             //this.SettingConfigs();
@@ -127,7 +127,7 @@ namespace DMS.Forms.DAP.InitIDE {
                 string localFileName = GetLocalFileFullName();
                 outputStream = new FileStream(localFileName, FileMode.Create);
                 //FTP文件路径
-                string ftpFileName = GetFtpFileFullName(this.version,this.patch);
+                string ftpFileName = GetFtpFileFullName(this.version, this.patch);
                 reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftpFileName));
                 reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
                 reqFTP.UseBinary = true;
@@ -198,9 +198,9 @@ namespace DMS.Forms.DAP.InitIDE {
                 }
             }
         }
-        
 
-        public string GetFtpFileFullName(string version,string patch) {
+
+        public string GetFtpFileFullName(string version, string patch) {
             StringBuilder fileName = new StringBuilder();
             fileName.Append("ftp://" + InitParameter.FTP_SERVER);
             fileName.Append(string.Format("/STS Release/{0}.1000 STS", version));
@@ -393,7 +393,7 @@ namespace DMS.Forms.DAP.InitIDE {
                 //xw.Indentation = 4;
                 //xml.Save(xw);
                 //xw.Close();
-            } catch { 
+            } catch {
             }
         }
 
@@ -422,7 +422,7 @@ namespace DMS.Forms.DAP.InitIDE {
             string path = GetVersionPath();
             List<string> list = FtpHelper.GetFileListFromFtp(path);
             List<string> result = new List<string>();
-            foreach(string content in list) {
+            foreach (string content in list) {
                 string version = content.Substring(0, 5);
                 if (!result.Contains(version)) {
                     result.Add(version);
@@ -461,7 +461,7 @@ namespace DMS.Forms.DAP.InitIDE {
             return parameters;
         }
 
-        public void SaveRunnintParameter(List<DapParameter> parameters, string projectPath,bool initRedis) {
+        public void SaveRunnintParameter(List<DapParameter> parameters, string projectPath, bool initRedis) {
             string appPath = Path.Combine(projectPath, InitParameter.APP_PROPERTIES_PATH);
             string dapPath = Path.Combine(projectPath, InitParameter.DAP_PROPERTIES_PATH);
             string proPath = Path.Combine(Environment.CurrentDirectory, "Files\\application.properties");
@@ -557,7 +557,7 @@ namespace DMS.Forms.DAP.InitIDE {
 
         private void UpgradePomVersion() {
             this.AppendText(string.Format("升级模组版本..."));
-            string pomPath= Path.Combine(projectPath, "develop\\module\\pom.xml");
+            string pomPath = Path.Combine(projectPath, "develop\\module\\pom.xml");
             XmlDocument xml = new XmlDocument();
             try {
                 xml.Load(pomPath);
@@ -611,6 +611,30 @@ namespace DMS.Forms.DAP.InitIDE {
             //删除临时目录
             Directory.Delete(GetTempPath(), true);
             this.AppendText("环境升级完毕...");
+        }
+        #endregion
+
+        #region 读取项目版本
+        public static string ReadProjectVersion(string projectPath, string originVersion) {
+            XmlDocument xml = new XmlDocument();
+            try {
+                string pomPath = Path.Combine(projectPath, "develop\\module\\pom.xml");
+                xml.Load(pomPath);
+                string nsUrl = xml.FirstChild.NamespaceURI;
+                XmlNamespaceManager nsMgr = new XmlNamespaceManager(xml.NameTable);
+                nsMgr.AddNamespace("ns", nsUrl);
+                XmlNode project = XmlHelper.GetNodeByPath(@"/ns:project", xml, nsMgr);
+
+                //追加nexus.ip,appcenter.verion
+                XmlNode properties = XmlHelper.GetNodeByPath(@"/ns:project/ns:properties", xml, nsMgr);
+                XmlNode apiVersion = XmlHelper.GetNodeByPath(@"/ns:project/ns:properties/ns:api.version", xml, nsMgr);
+                if (apiVersion != null) {
+                    return apiVersion.InnerText;
+                }
+            } catch (Exception ex) {
+                throw ex;
+            }
+            return originVersion;
         }
         #endregion
     }

@@ -27,6 +27,7 @@ namespace DMS.Forms
             Process instance = RunningInstance();
             if (instance == null)
             {
+                Application.ThreadException += Application_ThreadException;
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 SplashClass.Show(typeof(SplashForm));
@@ -64,6 +65,10 @@ namespace DMS.Forms
             ShowWindowAsync(instance.MainWindowHandle, WS_SHOWNORMAL);
             //Set the real intance to foreground window 
             SetForegroundWindow(instance.MainWindowHandle);
+        }
+
+        private static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e) {
+            MessageBox.Show("错误信息：" + e.Exception.Message + " ===>堆栈：" + e.Exception.StackTrace);
         }
     }
 }

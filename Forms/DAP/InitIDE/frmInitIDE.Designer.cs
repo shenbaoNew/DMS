@@ -29,6 +29,7 @@
             this.btnUpgrade = new DevComponents.DotNetBar.ButtonX();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSelectVersion = new DevComponents.DotNetBar.ButtonX();
+            this.btnReadVersion = new DevComponents.DotNetBar.ButtonItem();
             this.lblFirst = new System.Windows.Forms.Label();
             this.chkFirst = new System.Windows.Forms.CheckBox();
             this.btnSaveConfig = new DevComponents.DotNetBar.ButtonX();
@@ -144,15 +145,26 @@
             // btnSelectVersion
             // 
             this.btnSelectVersion.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSelectVersion.AutoExpandOnClick = true;
             this.btnSelectVersion.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnSelectVersion.Location = new System.Drawing.Point(873, 271);
             this.btnSelectVersion.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnSelectVersion.Name = "btnSelectVersion";
             this.btnSelectVersion.Size = new System.Drawing.Size(200, 51);
+            this.btnSelectVersion.StopPulseOnMouseOver = false;
+            this.btnSelectVersion.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnSelectVersion.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnReadVersion});
+            this.btnSelectVersion.SubItemsExpandWidth = 20;
             this.btnSelectVersion.TabIndex = 21;
             this.btnSelectVersion.Text = "选择";
             this.btnSelectVersion.Click += new System.EventHandler(this.btnSelectVersion_Click);
+            // 
+            // btnReadVersion
+            // 
+            this.btnReadVersion.GlobalItem = false;
+            this.btnReadVersion.Name = "btnReadVersion";
+            this.btnReadVersion.Text = "读取项目版本";
+            this.btnReadVersion.Click += new System.EventHandler(this.btnReadVersion_Click);
             // 
             // lblFirst
             // 
@@ -571,5 +583,6 @@
         private System.Windows.Forms.ToolStripButton tsbParameter;
         private System.Windows.Forms.Label label3;
         private DevComponents.DotNetBar.ButtonX btnUpgrade;
+        private DevComponents.DotNetBar.ButtonItem btnReadVersion;
     }
 }

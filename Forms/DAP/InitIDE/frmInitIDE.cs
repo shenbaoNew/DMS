@@ -246,5 +246,11 @@ namespace DMS.Forms {
                 tool.UpgradeDapRunEnvironment();
             }
         }
+
+        private void btnReadVersion_Click(object sender, EventArgs e) {
+            if (!string.IsNullOrEmpty(this.txtPath.Text)) {
+                this.cmbVersion.Text = InitTool.ReadProjectVersion(this.txtPath.Text, this.cmbVersion.Text);
+            }
+        }
     }
 }
