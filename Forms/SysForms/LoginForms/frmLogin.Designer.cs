@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
@@ -40,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblVersion = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelEx1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
@@ -275,5 +277,6 @@
         private System.Windows.Forms.Label lblVersion;
         private System.Windows.Forms.ProgressBar ProgressStatus;
         private System.Windows.Forms.Label lblNewVersion;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

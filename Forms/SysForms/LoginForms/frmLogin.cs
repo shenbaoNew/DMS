@@ -27,6 +27,7 @@ namespace DMS.Forms
 
             InitializeComponent();
             IinitMassages();
+            this.showToolTip();
 
             if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
                 this.lblVersion.Text = "V" + System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
@@ -225,6 +226,10 @@ namespace DMS.Forms
             if (MessageBox.Show("确定要升级吗？", "系统升级", MessageBoxButtons.OKCancel) == DialogResult.OK) {
                 CommonHelper.StartUpgradeProgram(PubContext.NewVesion);
             }
+        }
+
+        private void showToolTip() {
+            this.toolTip.SetToolTip(this.lblNewVersion, "请点击进行升级");
         }
 
         #endregion
