@@ -232,12 +232,15 @@
     <Compile Include="DataModel\Digiwin\DataClass.cs" />
     <Compile Include="DataModel\Digiwin\DigiwinHelper.cs" />
     <Compile Include="DataModel\MMSData\MMSData.cs" />
+    <Compile Include="DataModel\Model\Athena\Condition.cs" />
+    <Compile Include="DataModel\Model\Athena\Operator.cs" />
     <Compile Include="DataModel\PubData\PlantInfoData.cs" />
     <Compile Include="DataModel\Pub\CommonHelper.cs" />
     <Compile Include="DataModel\Pub\ConstHelper.cs" />
     <Compile Include="DataModel\Pub\DataBinds.cs" />
     <Compile Include="DataModel\Pub\FtpHelper.cs" />
     <Compile Include="DataModel\Pub\Functions.cs" />
+    <Compile Include="DataModel\Pub\JsonHelper.cs" />
     <Compile Include="DataModel\Pub\LogHelper.cs" />
     <Compile Include="DataModel\Pub\Menu.cs" />
     <Compile Include="DataModel\Pub\PubEnum.cs" />
@@ -281,6 +284,18 @@
       <DependentUpon>ProgressForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\BaseForms\ShowProgress.cs" />
+    <Compile Include="Forms\Common\frmCommonWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Common\frmCommonWindow.Designer.cs">
+      <DependentUpon>frmCommonWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DAP\frmBlurryQueryConExplain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DAP\frmBlurryQueryConExplain.Designer.cs">
+      <DependentUpon>frmBlurryQueryConExplain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DAP\frmCrossKey.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -560,6 +575,12 @@
     <EmbeddedResource Include="Forms\BaseForms\ProgressForm.resx">
       <DependentUpon>ProgressForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Common\frmCommonWindow.resx">
+      <DependentUpon>frmCommonWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DAP\frmBlurryQueryConExplain.resx">
+      <DependentUpon>frmBlurryQueryConExplain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DAP\frmCrossKey.resx">
       <DependentUpon>frmCrossKey.cs</DependentUpon>
     </EmbeddedResource>
@@ -799,7 +820,9 @@
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DataModel\Model\Dap\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

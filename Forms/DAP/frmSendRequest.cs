@@ -1,10 +1,9 @@
 ﻿using DMS.DataClass.Pub;
+using DMS.DataModel.Pub;
 using ICSharpCode.TextEditor.Document;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -62,7 +61,7 @@ namespace DMS.Forms {
                     strReqBody.Append(arrays[index]);
                 }
             }
-            this.txtReqBody.Text = FormateJson(strReqBody.ToString().Trim());
+            this.txtReqBody.Text = JsonHelper.FormateJson(strReqBody.ToString().Trim());
         }
 
         private void setHeaderColor() {
@@ -81,7 +80,7 @@ namespace DMS.Forms {
             try {
                 string result = this.SendRequest();
                 try {
-                    this.txtResponse.Text = FormateJson(result);
+                    this.txtResponse.Text = JsonHelper.FormateJson(result);
                 } catch (Exception ex) {
                     this.txtResponse.Text = result;
                 }
@@ -116,28 +115,8 @@ namespace DMS.Forms {
             headers.Add(value.Substring(0, index), value.Substring(index + 1));
         }
 
-        private string FormateJson(string str) {
-            //格式化json字符串
-            JsonSerializer serializer = new JsonSerializer();
-            TextReader tr = new StringReader(str);
-            JsonTextReader jtr = new JsonTextReader(tr);
-            object obj = serializer.Deserialize(jtr);
-            if (obj != null) {
-                StringWriter textWriter = new StringWriter();
-                JsonTextWriter jsonWriter = new JsonTextWriter(textWriter) {
-                    Formatting = Formatting.Indented,
-                    Indentation = 2,
-                    IndentChar = ' '
-                };
-                serializer.Serialize(jsonWriter, obj);
-                return textWriter.ToString();
-            } else {
-                return str;
-            }
-        }
-
         private void lblFormat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-            this.txtReqBody.Text = FormateJson(this.txtReqBody.Text);
+            this.txtReqBody.Text = JsonHelper.FormateJson(this.txtReqBody.Text);
         }
 
         public void SetColor(string text, Color color) {
