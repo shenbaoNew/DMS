@@ -1,4 +1,5 @@
-﻿using SevenZip;
+﻿using DMS.DataModel.Pub;
+using SevenZip;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -100,8 +101,13 @@ namespace DMS.DataClass.Pub {
                 return newVersion.CompareTo(version) > 0 ? newVersion : "";
             } catch (Exception ex) {
                 Console.WriteLine(ex.Message);
+                LogHelper.WriteLog(GetStackMessage(ex));
             }
             return "";
+        }
+
+        public static string GetStackMessage(Exception ex) {
+            return "错误信息：" + ex.Message + " ===>堆栈：" + ex.StackTrace;
         }
 
         public static void StartUpgradeProgram(string version) {
