@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Security.Cryptography;
-using System.Globalization;
-using DMS.DataClass.Pub;
+﻿using DMS.DataClass.Pub;
+using System;
 
 namespace DMS.Forms {
     public partial class frmCrossKey : BaseForm {

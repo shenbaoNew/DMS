@@ -290,22 +290,22 @@
     <Compile Include="Forms\Common\frmCommonWindow.Designer.cs">
       <DependentUpon>frmCommonWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DAP\frmBlurryQueryConExplain.cs">
+    <Compile Include="Forms\Athena\frmBlurryQueryConExplain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DAP\frmBlurryQueryConExplain.Designer.cs">
+    <Compile Include="Forms\Athena\frmBlurryQueryConExplain.Designer.cs">
       <DependentUpon>frmBlurryQueryConExplain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DAP\frmCrossKey.cs">
+    <Compile Include="Forms\ESP\frmCrossKey.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DAP\frmCrossKey.Designer.cs">
+    <Compile Include="Forms\ESP\frmCrossKey.Designer.cs">
       <DependentUpon>frmCrossKey.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DAP\frmSendRequest.cs">
+    <Compile Include="Forms\ESP\frmSendRequest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DAP\frmSendRequest.Designer.cs">
+    <Compile Include="Forms\ESP\frmSendRequest.Designer.cs">
       <DependentUpon>frmSendRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DAP\frmSetDBServer.cs">
@@ -578,13 +578,13 @@
     <EmbeddedResource Include="Forms\Common\frmCommonWindow.resx">
       <DependentUpon>frmCommonWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DAP\frmBlurryQueryConExplain.resx">
+    <EmbeddedResource Include="Forms\Athena\frmBlurryQueryConExplain.resx">
       <DependentUpon>frmBlurryQueryConExplain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DAP\frmCrossKey.resx">
+    <EmbeddedResource Include="Forms\ESP\frmCrossKey.resx">
       <DependentUpon>frmCrossKey.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DAP\frmSendRequest.resx">
+    <EmbeddedResource Include="Forms\ESP\frmSendRequest.resx">
       <DependentUpon>frmSendRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DAP\frmSetDBServer.resx">
