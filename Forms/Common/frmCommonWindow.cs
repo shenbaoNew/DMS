@@ -11,5 +11,9 @@ namespace DMS.Forms.Common {
             this.Text = caption;
             this.txtMessage.Text = message;
         }
+
+        public string Message {
+            get { return this.txtMessage.Text; }
+        }
     }
 }

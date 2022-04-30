@@ -39,7 +39,7 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(36, 36);
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1474, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1737, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -56,7 +56,7 @@
             this.panelEx1.Location = new System.Drawing.Point(0, 25);
             this.panelEx1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(1474, 1208);
+            this.panelEx1.Size = new System.Drawing.Size(1737, 1208);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -79,7 +79,7 @@
             this.txtCon.Location = new System.Drawing.Point(139, 903);
             this.txtCon.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.txtCon.Name = "txtCon";
-            this.txtCon.Size = new System.Drawing.Size(1249, 278);
+            this.txtCon.Size = new System.Drawing.Size(1512, 278);
             this.txtCon.TabIndex = 16;
             // 
             // btnCase
@@ -113,7 +113,7 @@
             this.txtJson.Location = new System.Drawing.Point(139, 43);
             this.txtJson.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.txtJson.Name = "txtJson";
-            this.txtJson.Size = new System.Drawing.Size(1249, 777);
+            this.txtJson.Size = new System.Drawing.Size(1512, 777);
             this.txtJson.TabIndex = 11;
             // 
             // lblFormat
@@ -132,7 +132,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1474, 1246);
+            this.ClientSize = new System.Drawing.Size(1737, 1246);
             this.Controls.Add(this.panelEx1);
             this.Controls.Add(this.toolStrip1);
             this.DoubleBuffered = true;

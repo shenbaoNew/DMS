@@ -40,31 +40,38 @@ namespace DMS.Forms {
         }
 
         private void btnCase_Click(object sender, EventArgs e) {
-            frmCommonWindow commonWindow = new frmCommonWindow("范例json", "{\r\n" +
+            frmCommonWindow commonWindow = new frmCommonWindow("范例json", jsonCase);
+            DialogResult result = commonWindow.ShowDialog();
+            if (result == DialogResult.OK) {
+                this.txtJson.Text = commonWindow.Message;
+            }
+        }
+
+        private string jsonCase = "{\r\n" +
                 "  \"search_info\": [\r\n" +
                 "    {\r\n" +
                 "      \"order\": 1,\r\n" +
                 "      \"bracket\": \"(\",\r\n" +
-                "      \"logic\": \"OR\",\r\n" +
-                "      \"search_field\": \"name\",\r\n" +
+                "      \"logic\": \"AND\",\r\n" +
+                "      \"search_field\": \"code\",\r\n" +
                 "      \"search_operator\": \"equal\",\r\n" +
-                "      \"search_value\": [\"印表機\"]\r\n" +
+                "      \"search_value\": [\"10001\"]\r\n" +
                 "    },\r\n" +
                 "    {\r\n" +
                 "      \"order\": 2,\r\n" +
                 "      \"bracket\": \")\",\r\n" +
-                "      \"logic\": \"AND\",\r\n" +
+                "      \"logic\": \"OR\",\r\n" +
                 "      \"search_field\": \"status\",\r\n" +
                 "      \"search_operator\": \"equal\",\r\n" +
-                "      \"search_value\": [\"印表機\"]\r\n" +
+                "      \"search_value\": [\"Y\"]\r\n" +
                 "    },\r\n" +
                 "    {\r\n" +
                 "      \"order\": 3,\r\n" +
                 "      \"bracket\": \"(\",\r\n" +
-                "      \"logic\": \"OR\",\r\n" +
+                "      \"logic\": \"AND\",\r\n" +
                 "      \"search_field\": \"name\",\r\n" +
-                "      \"search_operator\": \"equal\",\r\n" +
-                "      \"search_value\": [\"印表機\"]\r\n" +
+                "      \"search_operator\": \"like\",\r\n" +
+                "      \"search_value\": [\"机台\"]\r\n" +
                 "    },\r\n" +
                 "    {\r\n" +
                 "      \"order\": 4,\r\n" +
@@ -72,11 +79,9 @@ namespace DMS.Forms {
                 "      \"logic\": \"\",\r\n" +
                 "      \"search_field\": \"status\",\r\n" +
                 "      \"search_operator\": \"equal\",\r\n" +
-                "      \"search_value\": [\"印表機\"]\r\n" +
+                "      \"search_value\": [\"Y\"]\r\n" +
                 "    }\r\n" +
                 "  ]\r\n" +
-                "}");
-            commonWindow.ShowDialog();
-        }
+                "}";
     }
 }
