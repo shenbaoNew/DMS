@@ -84,6 +84,7 @@
             // 
             // panel1
             // 
+            this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.chkRedisInit);
             this.panel1.Controls.Add(this.txtRedisPwd);
             this.panel1.Controls.Add(this.label20);
