@@ -338,9 +338,9 @@ namespace DMS.Forms.DAP.InitIDE {
                     nexusIp.InnerText = "https://repo.digiwincloud.com.cn/maven";
                     properties.AppendChild(nexusIp);
                 }
-                XmlNode appVersioin = xml.CreateElement("bm.version", nsUrl);
-                appVersioin.InnerText = this.version + ".35";
-                properties.AppendChild(appVersioin);
+                XmlNode bmVersioin = xml.CreateElement("bm.version", nsUrl);
+                bmVersioin.InnerText = this.version + "." + PubContext.BmVersion;
+                properties.AppendChild(bmVersioin);
 
                 //追加repository
                 XmlNode repositories = XmlHelper.GetNodeByPath(@"/ns:project/ns:repositories", xml, nsMgr);

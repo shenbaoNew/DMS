@@ -44,7 +44,7 @@ namespace DMS.Forms {
 
         public string NewVersion() {
             try {
-                List<string> fileList = FtpHelper.GetFileListFromFtp(PubContext.DmsFtpServer, PubContext.DmsFtpUser, PubContext.DmsFtpPwd, "/");
+                List<string> fileList = FtpHelper.GetFileListFromFtp(PubContext.DmsFtpServer, PubContext.DmsFtpUser, PubContext.DmsFtpPwd, "/", "DMS_");
                 string maxFileName = fileList.Max();
                 return maxFileName.Substring(maxFileName.IndexOf("_") + 1).TrimEnd(".zip".ToCharArray());
             } catch (Exception ex) {

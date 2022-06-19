@@ -95,12 +95,25 @@ namespace DMS.DataClass.Pub {
         public static string NewVersion() {
             try {
                 string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-                List<string> fileList = FtpHelper.GetFileListFromFtp(PubContext.DmsFtpServer, PubContext.DmsFtpUser, PubContext.DmsFtpPwd, "/");
+                List<string> fileList = FtpHelper.GetFileListFromFtp(PubContext.DmsFtpServer, PubContext.DmsFtpUser, PubContext.DmsFtpPwd, "/", "DMS_");
                 string maxFileName = fileList.Max();
                 string newVersion = maxFileName.Substring(maxFileName.IndexOf("_") + 1).TrimEnd(".zip".ToCharArray());
                 return newVersion.CompareTo(version) > 0 ? newVersion : "";
             } catch (Exception ex) {
                 Console.WriteLine(ex.Message);
+                LogHelper.WriteLog(GetStackMessage(ex));
+            }
+            return "";
+        }
+
+        public static string BmNewVersion() {
+            try {
+                List<string> fileList = FtpHelper.GetFileListFromFtp(PubContext.DmsFtpServer, PubContext.DmsFtpUser, PubContext.DmsFtpPwd, "/", "BM_");
+                string maxFileName = fileList.Max();
+                string newVersion = maxFileName.Substring(maxFileName.IndexOf("_") + 1).TrimEnd(".bm".ToCharArray());
+                return newVersion;
+            } catch (Exception ex) {
+                Console.WriteLine("获取bm组件最新版本失败:" + ex.Message);
                 LogHelper.WriteLog(GetStackMessage(ex));
             }
             return "";

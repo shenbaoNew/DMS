@@ -121,6 +121,7 @@ namespace DMS
                 NewVesionEvent?.Invoke(null, EventArgs.Empty);
             }
         }
+        public static string BmVersion = "";
         #endregion
 
         public static UserData CurrentUser { get; set; }

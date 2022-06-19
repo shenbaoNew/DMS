@@ -84,7 +84,7 @@ namespace DMS.DataClass.Pub {
         }
 
         public static List<string> GetFileListFromFtp(string ftpServer, string ftpUser, string ftpPwd
-            , string ftpPath) {
+            , string ftpPath,string preFix) {
             FtpWebRequest reqFTP = null;
             FileStream outputStream = null;
             StreamReader reader = null;
@@ -102,7 +102,7 @@ namespace DMS.DataClass.Pub {
                 string line = reader.ReadLine();
                 while (line != null) {
                     if (!line.Contains("<DIR>")
-                         && line.StartsWith("DMS_")) {
+                         && line.StartsWith(preFix)) {
                         list.Add(line);
                     }
                     line = reader.ReadLine();

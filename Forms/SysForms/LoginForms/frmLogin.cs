@@ -55,6 +55,7 @@ namespace DMS.Forms
             PubContext.NewVesion = CommonHelper.NewVersion();
             this.lblNewVersion.Text = "V" + PubContext.NewVesion + "（新）";
             this.lblNewVersion.Visible = !string.IsNullOrEmpty(PubContext.NewVesion);
+            PubContext.BmVersion = CommonHelper.BmNewVersion();
             System.Threading.Thread.Sleep(1000);
             SplashClass.Status = "友情提醒：相关数据和组件加载完成！";
             System.Threading.Thread.Sleep(1000);
