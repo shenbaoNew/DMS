@@ -527,6 +527,7 @@ namespace DMS.Forms.DAP.InitIDE {
             this.RunUpgradeBat();
             //升级相关pom版本
             this.UpgradePomVersion();
+            this.UpgradeBmVerison();
             //还原配置文件内容
             ReductionConfigFile();
             //升级完毕
@@ -571,6 +572,38 @@ namespace DMS.Forms.DAP.InitIDE {
                 XmlNode apiVersion = XmlHelper.GetNodeByPath(@"/ns:project/ns:properties/ns:api.version", xml, nsMgr);
                 if (apiVersion != null) {
                     apiVersion.InnerText = this.patch;
+                }
+
+                xml.Save(pomPath);
+                //XmlTextWriter xw = new XmlTextWriter(pomPath, null);
+                //xw.Formatting = Formatting.Indented;
+                //xw.Indentation = 4;
+                //xml.Save(xw);
+                //xw.Close();
+            } catch {
+            }
+        }
+
+        private void UpgradeBmVerison() {
+            this.AppendText(string.Format("升级BM版本..."));
+            UpgradeBmVerison(Path.Combine(projectPath, "develop\\module\\pom.xml"));
+            UpgradeBmVerison(Path.Combine(projectPath, "develop\\DWThirdPartyLibrary\\pom.xml"));
+        }
+
+        private void UpgradeBmVerison(string pomPath) {
+            XmlDocument xml = new XmlDocument();
+            try {
+                xml.Load(pomPath);
+                string nsUrl = xml.FirstChild.NamespaceURI;
+                XmlNamespaceManager nsMgr = new XmlNamespaceManager(xml.NameTable);
+                nsMgr.AddNamespace("ns", nsUrl);
+                XmlNode project = XmlHelper.GetNodeByPath(@"/ns:project", xml, nsMgr);
+
+                //追加nexus.ip,appcenter.verion
+                XmlNode properties = XmlHelper.GetNodeByPath(@"/ns:project/ns:properties", xml, nsMgr);
+                XmlNode bmVersion = XmlHelper.GetNodeByPath(@"/ns:project/ns:properties/ns:bm.version", xml, nsMgr);
+                if (bmVersion != null) {
+                    bmVersion.InnerText = this.version + "." + PubContext.BmVersion;
                 }
 
                 xml.Save(pomPath);
