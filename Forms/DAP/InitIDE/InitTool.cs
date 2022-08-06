@@ -19,8 +19,9 @@ namespace DMS.Forms.DAP.InitIDE {
         private string patch;
         private string jdkPath;
         private bool first;
+        private bool initWithUpgrade;
 
-        public InitTool(RichTextBoxEx log, string projectPath, string version, string patch, string jdk, bool first) {
+        public InitTool(RichTextBoxEx log, string projectPath, string version, string patch, string jdk, bool first,bool initWithUpgrade) {
             this.log = log;
             this.projectPath = projectPath;
             this.developPath = projectPath + "\\develop";
@@ -28,6 +29,7 @@ namespace DMS.Forms.DAP.InitIDE {
             this.patch = patch;
             this.jdkPath = jdk;
             this.first = first;
+            this.initWithUpgrade = initWithUpgrade;
 
             //修改临时文件夹的名称为项目文件夹名称，将来模组会用到项目名
             this.ChangeProjectFolderName();
@@ -318,6 +320,12 @@ namespace DMS.Forms.DAP.InitIDE {
                 this.AppendText("配置修改module\\pom.xml(nexus地址配置,公共组件默认版本配置)...");
                 this.AppendAppCenterNode(Path.Combine(projectPath, "develop\\module\\pom.xml"));
                 this.AppendAppCenterNode(Path.Combine(projectPath, "develop\\DWThirdPartyLibrary\\pom.xml"));
+            }
+            else if (this.initWithUpgrade) {
+                //升级相关pom版本
+                //搭建环境的同时升级版本
+                this.UpgradePomVersion();
+                this.UpgradeBmVerison();
             }
         }
 

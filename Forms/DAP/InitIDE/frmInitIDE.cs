@@ -34,8 +34,6 @@ namespace DMS.Forms {
         private void chk301_CheckedChanged(object sender, EventArgs e) {
             if (chk410.Checked) {
                 chk501.Checked = false;
-                chk312.Checked = false;
-                chk401.Checked = false;
 
                 cmbVersion.Text = "4.1.0.1000";
             }
@@ -44,32 +42,15 @@ namespace DMS.Forms {
         private void chk311_CheckedChanged(object sender, EventArgs e) {
             if (chk501.Checked) {
                 chk410.Checked = false;
-                chk312.Checked = false;
-                chk401.Checked = false;
 
                 cmbVersion.Text = "5.0.1.1000";
             }
         }
 
         private void chk312_CheckedChanged(object sender, EventArgs e) {
-
-            if (chk312.Checked) {
-                chk410.Checked = false;
-                chk501.Checked = false;
-                chk401.Checked = false;
-
-                cmbVersion.Text = "3.1.2.1000";
-            }
         }
 
         private void chk401_CheckedChanged(object sender, EventArgs e) {
-            if (chk401.Checked) {
-                chk410.Checked = false;
-                chk501.Checked = false;
-                chk312.Checked = false;
-
-                cmbVersion.Text = "4.0.1.1000";
-            }
         }
 
         private void btnStartInit_Click(object sender, EventArgs e) {
@@ -89,7 +70,8 @@ namespace DMS.Forms {
                 this.txtLog.Text = "";
                 InitTool tool = new InitTool(this.txtLog, this.txtPath.Text.Trim(), this.GetVersion(), this.cmbVersion.Text.Trim()
                     , this.txtJdkPath.Text.Trim()
-                    , this.chkFirst.Checked);
+                    , this.chkFirst.Checked
+                    , this.chkInitWithUpgrade.Checked);
                 tool.InitDapRunEnvironment();
             }
         }
@@ -186,9 +168,19 @@ namespace DMS.Forms {
 
         private void chkFirst_CheckedChanged(object sender, EventArgs e) {
             if (this.chkFirst.Checked) {
+                this.chkInitWithUpgrade.Checked = false;
                 this.lblFirst.Text = "首次安装dap环境，用于新项目启动，还未进行任何开发";
             } else {
                 this.lblFirst.Text = string.Empty;
+            }
+        }
+
+        private void chkInitWithUpgrade_CheckedChanged(object sender, EventArgs e) {
+            if (this.chkInitWithUpgrade.Checked) {
+                this.chkFirst.Checked = false;
+                lblInitUpgrade.Text = "利用线上源码，搭建环境的同时升级版本";
+            } else {
+                lblInitUpgrade.Text = "";
             }
         }
 
@@ -242,7 +234,8 @@ namespace DMS.Forms {
                 this.txtLog.Text = "";
                 InitTool tool = new InitTool(this.txtLog, this.txtPath.Text.Trim(), this.GetVersion(), this.cmbVersion.Text.Trim()
                     , this.txtJdkPath.Text.Trim()
-                    , this.chkFirst.Checked);
+                    , this.chkFirst.Checked
+                    , false);
                 tool.UpgradeDapRunEnvironment();
             }
         }

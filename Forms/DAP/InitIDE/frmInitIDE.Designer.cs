@@ -26,6 +26,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInitIDE));
             this.expandablePanel1 = new DevComponents.DotNetBar.ExpandablePanel();
+            this.chkInitWithUpgrade = new System.Windows.Forms.CheckBox();
             this.btnUpgrade = new DevComponents.DotNetBar.ButtonX();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSelectVersion = new DevComponents.DotNetBar.ButtonX();
@@ -49,9 +50,7 @@
             this.cb312_1021 = new DevComponents.Editors.ComboItem();
             this.cb312_1022 = new DevComponents.Editors.ComboItem();
             this.cb401_1006 = new DevComponents.Editors.ComboItem();
-            this.chk401 = new System.Windows.Forms.CheckBox();
             this.chk501 = new System.Windows.Forms.CheckBox();
-            this.chk312 = new System.Windows.Forms.CheckBox();
             this.chk410 = new System.Windows.Forms.CheckBox();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.btnSelect = new DevComponents.DotNetBar.ButtonX();
@@ -65,6 +64,7 @@
             this.tsbRanInit = new System.Windows.Forms.ToolStripButton();
             this.tsbDapVersion = new System.Windows.Forms.ToolStripButton();
             this.tsbParameter = new System.Windows.Forms.ToolStripButton();
+            this.lblInitUpgrade = new System.Windows.Forms.Label();
             this.expandablePanel1.SuspendLayout();
             this.groupLog.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -75,9 +75,11 @@
             // 
             this.expandablePanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.expandablePanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.expandablePanel1.Controls.Add(this.chkInitWithUpgrade);
             this.expandablePanel1.Controls.Add(this.btnUpgrade);
             this.expandablePanel1.Controls.Add(this.label3);
             this.expandablePanel1.Controls.Add(this.btnSelectVersion);
+            this.expandablePanel1.Controls.Add(this.lblInitUpgrade);
             this.expandablePanel1.Controls.Add(this.lblFirst);
             this.expandablePanel1.Controls.Add(this.chkFirst);
             this.expandablePanel1.Controls.Add(this.btnSaveConfig);
@@ -87,9 +89,7 @@
             this.expandablePanel1.Controls.Add(this.groupLog);
             this.expandablePanel1.Controls.Add(this.btnStartInit);
             this.expandablePanel1.Controls.Add(this.cmbVersion);
-            this.expandablePanel1.Controls.Add(this.chk401);
             this.expandablePanel1.Controls.Add(this.chk501);
-            this.expandablePanel1.Controls.Add(this.chk312);
             this.expandablePanel1.Controls.Add(this.chk410);
             this.expandablePanel1.Controls.Add(this.txtPath);
             this.expandablePanel1.Controls.Add(this.btnSelect);
@@ -118,6 +118,17 @@
             this.expandablePanel1.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.expandablePanel1.TitleStyle.GradientAngle = 90;
             this.expandablePanel1.TitleText = "DAP环境搭建/更新";
+            // 
+            // chkInitWithUpgrade
+            // 
+            this.chkInitWithUpgrade.AutoSize = true;
+            this.chkInitWithUpgrade.Location = new System.Drawing.Point(1259, 285);
+            this.chkInitWithUpgrade.Name = "chkInitWithUpgrade";
+            this.chkInitWithUpgrade.Size = new System.Drawing.Size(95, 33);
+            this.chkInitWithUpgrade.TabIndex = 24;
+            this.chkInitWithUpgrade.Text = "升级";
+            this.chkInitWithUpgrade.UseVisualStyleBackColor = true;
+            this.chkInitWithUpgrade.CheckedChanged += new System.EventHandler(this.chkInitWithUpgrade_CheckedChanged);
             // 
             // btnUpgrade
             // 
@@ -370,21 +381,10 @@
             // 
             this.cb401_1006.Text = "4.0.1.1006";
             // 
-            // chk401
-            // 
-            this.chk401.AutoSize = true;
-            this.chk401.Location = new System.Drawing.Point(1403, 285);
-            this.chk401.Name = "chk401";
-            this.chk401.Size = new System.Drawing.Size(101, 33);
-            this.chk401.TabIndex = 6;
-            this.chk401.Text = "4.0.1";
-            this.chk401.UseVisualStyleBackColor = true;
-            this.chk401.CheckedChanged += new System.EventHandler(this.chk401_CheckedChanged);
-            // 
             // chk501
             // 
             this.chk501.AutoSize = true;
-            this.chk501.Location = new System.Drawing.Point(1679, 285);
+            this.chk501.Location = new System.Drawing.Point(1524, 285);
             this.chk501.Name = "chk501";
             this.chk501.Size = new System.Drawing.Size(101, 33);
             this.chk501.TabIndex = 5;
@@ -392,21 +392,10 @@
             this.chk501.UseVisualStyleBackColor = true;
             this.chk501.CheckedChanged += new System.EventHandler(this.chk311_CheckedChanged);
             // 
-            // chk312
-            // 
-            this.chk312.AutoSize = true;
-            this.chk312.Location = new System.Drawing.Point(1262, 285);
-            this.chk312.Name = "chk312";
-            this.chk312.Size = new System.Drawing.Size(101, 33);
-            this.chk312.TabIndex = 4;
-            this.chk312.Text = "3.1.2";
-            this.chk312.UseVisualStyleBackColor = true;
-            this.chk312.CheckedChanged += new System.EventHandler(this.chk312_CheckedChanged);
-            // 
             // chk410
             // 
             this.chk410.AutoSize = true;
-            this.chk410.Location = new System.Drawing.Point(1544, 285);
+            this.chk410.Location = new System.Drawing.Point(1389, 285);
             this.chk410.Name = "chk410";
             this.chk410.Size = new System.Drawing.Size(101, 33);
             this.chk410.TabIndex = 3;
@@ -518,6 +507,15 @@
             this.tsbParameter.Text = "通用参数";
             this.tsbParameter.Click += new System.EventHandler(this.tsbParameter_Click);
             // 
+            // lblInitUpgrade
+            // 
+            this.lblInitUpgrade.AutoSize = true;
+            this.lblInitUpgrade.ForeColor = System.Drawing.Color.Red;
+            this.lblInitUpgrade.Location = new System.Drawing.Point(1254, 341);
+            this.lblInitUpgrade.Name = "lblInitUpgrade";
+            this.lblInitUpgrade.Size = new System.Drawing.Size(0, 29);
+            this.lblInitUpgrade.TabIndex = 20;
+            // 
             // frmInitIDE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
@@ -551,9 +549,7 @@
         private DevComponents.DotNetBar.ButtonItem btnPathClear;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox chk401;
         private System.Windows.Forms.CheckBox chk501;
-        private System.Windows.Forms.CheckBox chk312;
         private System.Windows.Forms.CheckBox chk410;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cmbVersion;
         private DevComponents.Editors.ComboItem cb301_1010;
@@ -584,5 +580,7 @@
         private System.Windows.Forms.Label label3;
         private DevComponents.DotNetBar.ButtonX btnUpgrade;
         private DevComponents.DotNetBar.ButtonItem btnReadVersion;
+        private System.Windows.Forms.CheckBox chkInitWithUpgrade;
+        private System.Windows.Forms.Label lblInitUpgrade;
     }
 }
